@@ -1,0 +1,59 @@
+.hero-section {
+  position: relative;
+  height: 850px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('../assets/images/slide01.jpg') center 30% no-repeat;
+  background-size: cover;
+}
+
+.about-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f3f3f3;
+}
+
+.about-grid {
+	padding: 0px;
+	margin: 0px;
+}
+
+.about-content {
+	padding-right: 30px;
+	padding-left: 30px;
+
+}
+
+.about-img {
+	position: relative;
+	float: right;
+	width: 100%;
+	right: 0;
+	bottom: 0;
+}
+
+.gallery-section {
+	background-color: white;
+}
+
+.gallery-cell {
+	height: 200px;
+}
+
+.gallery-img {
+	position: relative;
+	width: 100%;
+	height: auto;
+	white-space: nowrap;
+	overflow-x: auto;
+}
+
+/*.gallery-grid{
+	padding: 0;
+}
+
+.gallery-cell {
+	margin: 0;
+}*/
+

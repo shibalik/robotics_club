@@ -17,3 +17,57 @@ table{
 th, td{
     overflow: auto;
 }
+
+.navigation .nav-blog {
+  border-bottom: 4px solid #8bc34a;
+}
+
+.drawer .nav-blog {
+}
+
+.hero-section {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  background: url('../assets/images/blog-hero.png') center 50% no-repeat;
+  background-color: #25b099;
+  background-size: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.post-section {
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+.post-grid {
+	
+}
+
+.comment-card {
+  padding: 12px;
+}
+
+.post-card.mdl-card {
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.post-card > .mdl-card__title {
+  color: #fff;
+  background-color: #25b099;
+}
+
+.paginator-btn {
+  display: flex;
+}
+
+.post-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  
+}
+
+.post-card > .mdl-card__actions {
+  display: flex;
+  align-items: center;
+}
