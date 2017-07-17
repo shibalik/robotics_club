@@ -244,6 +244,18 @@ a img{
 
 /*##### For Mobile #####*/
 @media (max-width: 900px) {
+  #feed-bar{
+    display: none;
+  }
+
+  #feed-container{
+    display: none;
+  }
+
+  #feed-fb-box{
+    display: none;
+  }
+
   .header {
     background-color: white;
   }

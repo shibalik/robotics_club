@@ -57,3 +57,10 @@
 	margin: 0;
 }*/
 
+/*##### For Mobile #####*/
+@media (max-width: 900px) {
+	.hero-section {
+	    height: 350px;
+	}
+}
+

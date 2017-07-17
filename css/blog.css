@@ -71,3 +71,15 @@ th, td{
   display: flex;
   align-items: center;
 }
+
+/*##### For Mobile #####*/
+@media (max-width: 900px) {
+
+	.hero-section {
+	    height: 350px;
+	}
+
+	img {
+		width: 100%;
+	}
+}
