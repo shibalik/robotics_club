@@ -16,4 +16,4 @@ kramdown:
 highlighter: rouge
 
 exclude: ["/docs"]
-destination: "/home/shashi/gitrepo/robotics_club_blog/docs/"
+destination: "/home/shashi/gitrepo/robotics_club/docs/"
