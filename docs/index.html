@@ -102,7 +102,7 @@
   </div>
   <div class="logo-font sub-slogan">IIT Kanpur</div>
   <div class="logo-font create-character">
-    <p class="mdl-typography--subhead-color-contrast " style="font-family: 'PT Mono', monospace; font-size: large;">Some tag-line...
+    <p class="mdl-typography--subhead-color-contrast " style="font-family: 'PT Mono', monospace; font-size: large;">#HappyRoboting
     </p>
   </div>
 </div>
@@ -124,6 +124,53 @@
       <img class="about-img" src="images/about.png">
     </div> -->
   </div>
+</div>
+
+<div class="cmpt-section mdl-typography--text-center">
+  <div class="cmpt-logo-font cmpt-slogan">
+    #Components_Issue
+  </div>
+  <div class="cmpt-logo-font cmpt-sub-slogan">
+  Need some components for your new Robotics Project?<br>You can issue components right from us, just fill the form below.
+  </div>
+  <!-- Flat button with ripple -->
+  <div class="cmpt-btn-sec">
+    <button class="cmpt-btn mdl-button mdl-js-button mdl-js-ripple-effect" onclick="open_form_modal()">
+      Form
+    </button>
+  </div>
+  <!-- <div id="modal"> -->
+  <div id="form-modal" class="modal mdl-grid">
+    <div class="modal-cell mdl-cell mdl-cell--3-offset-desktop mdl-cell--2-offset-tablet mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+      <div class="form-card mdl-card  mdl-shadow--8dp">
+        <div class="form-title mdl-card__title mdl-shadow--2dp">
+          <h2 class="mdl-card__title-text">Component Issue Form</h2>
+        </div>
+        <div class="form-content">
+          under maintenance
+        </div>
+        <div class="mdl-card__menu" style="color: #fff;">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="close_form_modal()">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+      var modal = document.getElementById('form-modal');
+
+      function open_form_modal(){
+        modal.style.display = "block";
+      }
+
+      function close_form_modal(){
+        modal.style.display = "none";
+      }
+
+  </script>
+  <!-- </div> -->
 </div>
 
         

@@ -2,6 +2,7 @@
 layout: post
 title: Create ROS executables.
 comments: true
+author: Shashi Kant, EE, Y16 || Member of HURO
 ---
 
 ### Converting a C++ executable into a ROS supported

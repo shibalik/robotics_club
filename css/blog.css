@@ -32,7 +32,7 @@ th, td{
   background: url('../assets/images/blog-hero.png') center 50% no-repeat;
   background-color: #25b099;
   background-size: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
 }
 
 .post-section {
@@ -70,6 +70,12 @@ th, td{
 .post-card > .mdl-card__actions {
   display: flex;
   align-items: center;
+}
+
+img {
+  margin: auto;
+  display: block;
+  max-width: 100%;
 }
 
 /*##### For Mobile #####*/
