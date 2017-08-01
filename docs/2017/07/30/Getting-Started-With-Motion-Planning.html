@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Robotics Club | IITK">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<title>I 'AM' Radio | Robotics Club </title>
+<title>Getting Started With Motion Planning | Robotics Club </title>
 <!-- Page styles -->
 <link rel="shortcut icon" href=http://localhost:4000/assets/images/favicon.ico type="image/x-icon">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -103,34 +103,133 @@
     <div class="post-content post-grid mdl-cell mdl-cell--3-offset-desktop mdl-cell--1-offset-tablet mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
       <div class="post-card mdl-card">
         <div class="mdl-card__title  mdl-shadow--2dp">
-          <h1 class="mdl-card__title-text">I 'AM' Radio</h1>
+          <h1 class="mdl-card__title-text">Getting Started With Motion Planning</h1>
         </div>
         <div class="mdl-card__supporting-text">
-          <p>In my last two posts, I talked about telegraph and telephone. Both these modes were wired. The entire country of USA had wires running across it so as to connect all states through this medium. Shortly after this followed the laying down of the transatlantic cable. In the late nineteenth century, as both these modes of communication were gaining popularity, there was an increasing need for a ‘wireless’ mode of communication.</p>
+          <p>This blog post is about my experience while developing a C++ library for motion
+planning during my third year “internship”. This is about how after failing to
+secure an internship for summers, I try to rescue my self-confidence by taking up
+an ambitious summer project. Going in a direction orthogonal to what was
+planned and finally making something I am proud of. This is both, my
+experiences and a very short introduction to the library I developed.</p>
 
-<p>Maxwell had already shaken the scientific community as he proved the existence of ‘electromagnetic waves’ - changing electric field induced a changing magnetic field and vice versa. Most, however, did not immediately realize how those four differential equations were going to shape the world and form the basis of the communication technology we know today.</p>
+<p>Almost an year ago from now (03-07-2017 11:10 PM), the beginning of the
+summer break, I was at one of the lowest points during my stay at IIT Kanpur. I
+had applied to only three companies for internship through the SPO and was not
+able to secure an internship since two of them decided to not take any student
+and was rejected by the third after an interview. Looking back at that time is
+amusing now and often forms the larger part of all the internship/placement
+fundae that I give to my juniors.</p>
 
-<p>Hertz became the first ever to claim transmission of these electromagnetic waves, thus proving Maxwell’s theory. His experimental set-up can be seen in the figure below. When a high voltage was applied across the metal plates, a spark could be seen between the metal spheres. This spark essentially consisted of electrons that were dancing around (more specifically, oscillating at the resonant frequency of the L-C circuit). According to the theory, these electrons must transmit electromagnetic waves. This was found to be true as a spark could be seen across the metal spheres of the metal ring which was electrically isolated from the transmitting circuit.</p>
+<p>To utilize my summer productively, I decided to work on a project with
+<a href="http://home.iitk.ac.in/~dasgupta/">Dr. Bhaskar Dasgupta</a> who was the then faculty advisor of the <a href="http://students.iitk.ac.in/robocon/">Robocon Team</a>. We
+decided to work on a project that we had talked about earlier during one of the
+Robocon team meetings. The project was to build a robot which could navigate in
+an unknown environment, build maps and do some form of path planning (It was not the good ol’ <a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping">SLAM</a> problem, trust me :-P). I was excited and overwhelmed at the same time. The task seemed insurmountable and there was so much to learn.
+I spent some time reading random stuff from the internet and after another
+meeting with my mentor, we decided that for the moment I should study and
+implement some path planning algorithms and we would decide how to go ahead
+at a later stage.</p>
 
-<p><img src="http://www.antonine-education.co.uk/Image_library/Physics_5_Options/Turning_points/hertz.gif" alt="The Hertz Experiment" /> 
- <strong>The Hertz Experiment</strong></p>
+<figure class="blog-image" style="width: ;">
+	
+  		<img class="blog-img" src="http://localhost:4000/blog/images/mpl-map.bmp" alt="Illustration 1: This is what I mean by a 'map'.
+Nothing fancy, just a bitmap where black denotes
+obstacles and white denotes the free region" />
+  	
+  <figcaption style="font-size: 80%"><i>Illustration 1: This is what I mean by a 'map'.
+Nothing fancy, just a bitmap where black denotes
+obstacles and white denotes the free region</i></figcaption>
+</figure>
 
-<p>Electromagnetic waves really did exist. It was then that Marconi, who we know today as the father of radio, conceptualized and successfully implemented wireless telegraphy. He transmitted Morse code over radio waves. How did he do so? Marconi used a spark-gap transmitter and crystal radio receivers. A relatively fun explanation of the spark gap transmitter can be found <a href="http://www.hammondmuseumofradio.org/spark.html">here</a>. As for the ‘crystal radio’, it was called so because it used a semiconductor crystal to demodulate the received RF signal. For the purposes of transmission of Morse code, it was done so by turning the Rf on and off. The RF still could not carry audio signals.</p>
+<p>This time, I studied a few standard
+motion planning algorithms and started
+thinking of how to simulate them. At
+this point, I must admit the MATLAB is
+not one of my favourites and I always
+try to find a reason for using C++. This
+was the perfect opportunity since I
+could not find a simple framework to
+simulate these algorithms and I admit
+that I did not try hard enough (or try at
+all! ). I convinced myself that this task
+was too computationally intensive to be
+handled by python and the only option I had was to use C++. I ended up writing about 200 lines of code to display a minimal (ugly) GUI which allowed the user to
+load a map (Illustration 1) and select the starting and ending points for
+computing the path and the program would then show an animation of the
+planning algorithm finding the path. I showed it to my mentor, he liked it and
+encouraged me to simulate another algorithm. This time, I decided, as any good
+software engineer would do, that I should divide my program into modules which
+share their functionality instead of replicating the code for every simulation I
+make. It was this second simulation which changed the direction of my summer
+project altogether.</p>
 
-<p><img src="https://regmedia.co.uk/2015/02/20/marconi_and_transmission_equipment.jpg?x=1200&amp;y=794" alt="Guglielmo Marconi - The scientist who had no formal education" />
-<strong>Guglielmo Marconi - The scientist who had no formal education</strong></p>
+<p>Long story short, I had now completely forgotten about the original problem
+statement and was focusing on problems like: How to factor out the pathplanning
+algorithms into composable components? What are the basic
+components of a path planning problem? What would a sensible API for path
+planning look like? I tackled these questions for 5-6 weeks while writing some
+prototypes, making flowcharts etc.</p>
 
-<p>The first AM voice transmission was made by Canadian researcher Reginald Fessenden on 23 December 1900. If you know a little bit about spark gap generators - they produced damped waves. Fessenden realized that in order to transmit audio, one need ‘CW’ - or continuous waves that could then be ‘modulated’. He developed his own transmitter, better known as the Alexanderson alternator. He also developed the concept of AM waves - Amplitude Modulated Waves. Radio as we know it today was born.</p>
+<p>While I was brainstorming on the design of this library, I would think of the
+behavior of each of the component on an algorithm, does it form a logical entity?
+What behaviors of the component to hide and what to expose to the user? Are
+the classes in this code a good representation of the objects in real world? I do
+not remember what all were the ideas I came up with since it has been almost an
+year since I started working on it but what I do remember is how after several
+weeks I was finally happy with the design after about 5 complete rewrites of the
+entire code (over ~1.5k lines of code). Here is the structure I came up with:</p>
 
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" disabled>
-          Shashi Kant, EE, Y16 || Member of HURO
-          </button>
-          <!-- <div class="mdl-layout-spacer"></div>
-          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" disabled>
-          
-          </button> -->
+<figure class="blog-image" style="width: ;">
+	
+  		<img class="blog-img" src="http://localhost:4000/blog/images/mpl-flowchart.png" alt="Illustration 2: Major components. The arrows denote what a typical workflow looks like. The worspace
+and problem definition are given to a motion planner which consists of a graph builder, a graph search
+and an interpolation method. The planner outputs a path. Each of these components can be visualized." />
+  	
+  <figcaption style="font-size: 80%"><i>Illustration 2: Major components. The arrows denote what a typical workflow looks like. The worspace
+and problem definition are given to a motion planner which consists of a graph builder, a graph search
+and an interpolation method. The planner outputs a path. Each of these components can be visualized.</i></figcaption>
+</figure>
+
+<p>Workspace contains the map of the environment. I defined it as a separate class
+so that it is possible to hide the implementation from other modules. Problem
+definition contains start and end points at the moment. It can be extended to
+incorporate way-points or other path constraints that the user might be interested
+in. The graph builder takes a workspace and discards all the information not
+required for planning the path thus forming a good representation of the
+workspace. The graph search algorithm searches this graph for paths which are
+then interpolated using the interpolator to generate smooth paths.</p>
+
+<p>Workspace contains the map of the environment. I defined it as a separate class
+so that it is possible to hide the implementation from other modules. Problem
+definition contains start and end points at the moment. It can be extended to
+incorporate way-points or other path constraints that the user might be interested
+in. The graph builder takes a workspace and discards all the information not
+required for planning the path thus forming a good representation of the
+workspace. The graph search algorithm searches this graph for paths which are
+then interpolated using the interpolator to generate smooth paths.</p>
+
+<p>I won’t go more into the library in this post since the library has some
+documentation at <a href="http://lakshayg.github.io/mpel/">lakshayg.github.io/mpel</a>. The source code for this library is
+available on GitHub at <a href="https://github.com/lakshayg/mpel">github.com/lakshayg/mpel</a>. I would recommend you to
+visit the link and have a look at the library and feel free to make changes and
+contribute to the code. I close this post with some examples of paths generated
+using different path planning algorithms:</p>
+
+<figure class="blog-image" style="width: 45%;">
+	
+  		<img class="blog-img" src="http://localhost:4000/blog/images/mpl-path001.png" alt="" />
+  	
+  <figcaption style="font-size: 80%"><i></i></figcaption>
+</figure>
+
+<figure class="blog-image" style="width: 45%;">
+	
+  		<img class="blog-img" src="http://localhost:4000/blog/images/mpl-path002.png" alt="" />
+  	
+  <figcaption style="font-size: 80%"><i></i></figcaption>
+</figure>
+
         </div>
         <div class="mdl-card__actions mdl-card--border">
 	    	<a href="http://localhost:4000/blog/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -138,7 +237,7 @@
           	</a>
           <div class="mdl-layout-spacer"></div>
           <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" disabled>
-          Written on: January 22, 2017
+          Lakshay Garg, EE, Y13 || Former member of Robocop, Also worked on IGVC. || July 30, 2017
           </button>
         </div>
       </div>
@@ -215,7 +314,7 @@
   </div>
 
   <div class="mdl-mega-footer--middle-section">
-    <p class="mdl-typography--font-light">© 2017 Robotics Club, IIT Kanpur</p>
+    <p class="mdl-typography--font-light">Designed by <a target="_blank" href="https://www.facebook.com/shashikg.iitk" style="text-decoration: none;">Shashi Kant</a><br>© 2017 Robotics Club, IIT Kanpur</p>
   </div>
 
   <!-- <div class="mdl-mega-footer--bottom-section">

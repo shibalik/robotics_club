@@ -1,242 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-30T16:50:03+05:30</updated><id>http://localhost:4000/</id><title type="html">Robotics Club</title><entry><title type="html">Create ROS executables.</title><link href="http://localhost:4000/2017/06/27/Creating-ROS-suported-executables.html" rel="alternate" type="text/html" title="Create ROS executables." /><published>2017-06-27T00:00:00+05:30</published><updated>2017-06-27T00:00:00+05:30</updated><id>http://localhost:4000/2017/06/27/Creating-ROS-suported-executables</id><content type="html" xml:base="http://localhost:4000/2017/06/27/Creating-ROS-suported-executables.html">&lt;h3 id=&quot;converting-a-c-executable-into-a-ros-supported&quot;&gt;Converting a C++ executable into a ROS supported&lt;/h3&gt;
-&lt;h4 id=&quot;general-things-to-be-done&quot;&gt;General things to be done&lt;/h4&gt;
-&lt;p&gt;Every C++ node should contains the following lines.&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//required header files you need to add headers files which you need for your node
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;ros/ros.h&quot; //this header is compulsory.
-#include &quot;std_msgs/Int32.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Just after the int main function add these two lines&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;demo_node&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Initiallising node
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NodeHandle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// declaring node handle.
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;ROS have differen type of data types for its subscribe, publisher, service and client and all are initialised in its own way. Below are given for all of them.&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//For Publisher declarartion plus initialisation
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Publisher&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pub_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advertise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std_msgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/topic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
-	&lt;span class=&quot;c1&quot;&gt;//Declaring publisher with name of publisher as pub_name and pub topic name as &quot;/topic&quot;.
-&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//and buffer size as 10. buffer size specifies the no of messages to keep before throwing away
-&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//some to store new messages.
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//For Subscriber declarartion plus initialisation
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Subscriber&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/topic&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myfirst_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Declaring subscriber with name as sub_name and sub topic name as &quot;/topic&quot;.
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//For Client
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceClient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;serviceClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ros_lec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;demo_srv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;service_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//declaring serviceclient variable client for service name as &quot;sq&quot;
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//For Server
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceServer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advertiseService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;service_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//declaring serviceserver variable.
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Variable declaration in ROS for different message types&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//pkgname::msg_name var_name; e.g.
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std_msgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int32&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pub_msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;specific-codes&quot;&gt;Specific codes&lt;/h2&gt;
-&lt;h3 id=&quot;publisher&quot;&gt;Publisher&lt;/h3&gt;
-&lt;p&gt;You need to declare the message variable and store value in it and then use the following command to publish it.&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pub_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pub_msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//publishing the msg
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;subscriber&quot;&gt;Subscriber&lt;/h3&gt;
-&lt;p&gt;You need to create a callback function to be called when any message pops on the topicit subscribes to.&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sub_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std_msgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Callback function nd storing the recieved msg in sub_msg...
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;//do anything you want to do here.
-&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//The message recieved can be accesse using the variable sub_msg
-&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//in this case it is sub_msg.data
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;client&quot;&gt;Client&lt;/h3&gt;
-&lt;p&gt;You need to declare the service variable and store value in it and then use the following command to send request to the service&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ros_lec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;demo_srv&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;srv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//service variable
-// this is how value is stored in a servce variable srv.request.in
-// srv_var.request.data_name_used_in_while_making_srv_file
-// run this command to call service
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;srv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//you will get your response in a varibale in srv_var.response.data_name_used_in_while_making_srv_file
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;service&quot;&gt;Service&lt;/h3&gt;
-&lt;p&gt;You need to create a callback function to be called when any service request is made.&lt;/p&gt;
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;service_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ros_lec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;demo_srv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ros_lec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;demo_srv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;//req.data_name_used_in_while_making_srv_file will contain your queried varialbe
-&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//while res.data_name_used_in_while_making_srv_file is used to store the response data inside 
-&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//this callback function.
-&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;spin-and-spinonce&quot;&gt;spin() and spinOnce()&lt;/h2&gt;
-&lt;p&gt;You need to add any one of these two in order to check for callbacks.&lt;/p&gt;</content><author><name>Shashi Kant, EE, Y16 || Member of HURO</name></author><summary type="html">Converting a C++ executable into a ROS supported General things to be done Every C++ node should contains the following lines. ```c //required header files you need to add headers files which you need for your node #include “ros/ros.h” //this header is compulsory. #include “std_msgs/Int32.h”</summary></entry><entry><title type="html">ROS Lec post to check for tables and codes.</title><link href="http://localhost:4000/2017/06/26/ROS-Lec-post-to-check-tables-and-codes.html" rel="alternate" type="text/html" title="ROS Lec post to check for tables and codes." /><published>2017-06-26T00:00:00+05:30</published><updated>2017-06-26T00:00:00+05:30</updated><id>http://localhost:4000/2017/06/26/ROS-Lec-post-to-check-tables-and-codes</id><content type="html" xml:base="http://localhost:4000/2017/06/26/ROS-Lec-post-to-check-tables-and-codes.html">&lt;h1 id=&quot;ros-lecture&quot;&gt;ROS-Lecture&lt;/h1&gt;
-&lt;p&gt;This repo contains all the codes and files which will be used during the lecture so it is suggested to clone this repo to your local PC. Further instructions are given below please follow them for a smooth conduct. You are also advised to download the lecture slides from  &lt;a href=&quot;https://docs.google.com/presentation/d/1lUvV41uaQqdtztrlgkrif68w_EaiigFQHx-20KBLS0M/edit?usp=sharing&quot;&gt;HERE&lt;/a&gt; and the cheatsheat provided in this repo, use that to know about command line tools.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-01T18:48:07+05:30</updated><id>http://localhost:4000/</id><title type="html">Robotics Club</title><entry><title type="html">Getting Started With Motion Planning</title><link href="http://localhost:4000/2017/07/30/Getting-Started-With-Motion-Planning.html" rel="alternate" type="text/html" title="Getting Started With Motion Planning" /><published>2017-07-30T00:00:00+05:30</published><updated>2017-07-30T00:00:00+05:30</updated><id>http://localhost:4000/2017/07/30/Getting%20Started%20With%20Motion%20Planning</id><content type="html" xml:base="http://localhost:4000/2017/07/30/Getting-Started-With-Motion-Planning.html">&lt;p&gt;This blog post is about my experience while developing a C++ library for motion
+planning during my third year “internship”. This is about how after failing to
+secure an internship for summers, I try to rescue my self-confidence by taking up
+an ambitious summer project. Going in a direction orthogonal to what was
+planned and finally making something I am proud of. This is both, my
+experiences and a very short introduction to the library I developed.&lt;/p&gt;
 
-&lt;h2 id=&quot;preparations&quot;&gt;Preparations&lt;/h2&gt;
-&lt;p&gt;Everyone please come prepared. Details are given below what you need to do.&lt;/p&gt;
+&lt;p&gt;Almost an year ago from now (03-07-2017 11:10 PM), the beginning of the
+summer break, I was at one of the lowest points during my stay at IIT Kanpur. I
+had applied to only three companies for internship through the SPO and was not
+able to secure an internship since two of them decided to not take any student
+and was rejected by the third after an interview. Looking back at that time is
+amusing now and often forms the larger part of all the internship/placement
+fundae that I give to my juniors.&lt;/p&gt;
 
-&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Please make sure you have ubuntu running on your system.&lt;/li&gt;
-  &lt;li&gt;Know the ubuntu release you had been using.&lt;/li&gt;
-  &lt;li&gt;ROS is installed according to your ubuntu release.&lt;/li&gt;
-  &lt;li&gt;Arduin IDE.&lt;/li&gt;
-  &lt;li&gt;A good text editor sublime is suggested.&lt;/li&gt;
-  &lt;li&gt;And your dedication!!!&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;To utilize my summer productively, I decided to work on a project with
+&lt;a href=&quot;http://home.iitk.ac.in/~dasgupta/&quot;&gt;Dr. Bhaskar Dasgupta&lt;/a&gt; who was the then faculty advisor of the &lt;a href=&quot;http://students.iitk.ac.in/robocon/&quot;&gt;Robocon Team&lt;/a&gt;. We
+decided to work on a project that we had talked about earlier during one of the
+Robocon team meetings. The project was to build a robot which could navigate in
+an unknown environment, build maps and do some form of path planning (It was not the good ol’ &lt;a href=&quot;https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping&quot;&gt;SLAM&lt;/a&gt; problem, trust me :-P). I was excited and overwhelmed at the same time. The task seemed insurmountable and there was so much to learn.
+I spent some time reading random stuff from the internet and after another
+meeting with my mentor, we decided that for the moment I should study and
+implement some path planning algorithms and we would decide how to go ahead
+at a later stage.&lt;/p&gt;
 
-&lt;h3 id=&quot;installations&quot;&gt;Installations&lt;/h3&gt;
-&lt;p&gt;ROS have different distributions for different release of ubuntu. So, you need to install accordingly. Links for installation instruction for different distributions and supported ubuntu release are given below. Execute the command for Desktop-Full&lt;/p&gt;
+&lt;figure class=&quot;blog-image&quot; style=&quot;width: ;&quot;&gt;
+	
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-map.bmp&quot; alt=&quot;Illustration 1: This is what I mean by a 'map'.
+Nothing fancy, just a bitmap where black denotes
+obstacles and white denotes the free region&quot; /&gt;
+  	
+  &lt;figcaption style=&quot;font-size: 80%&quot;&gt;&lt;i&gt;Illustration 1: This is what I mean by a 'map'.
+Nothing fancy, just a bitmap where black denotes
+obstacles and white denotes the free region&lt;/i&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;ROS Distribution&lt;/th&gt;
-      &lt;th&gt;Ubuntu Release&lt;/th&gt;
-      &lt;th&gt;Installation Instructions&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Lunar&lt;/td&gt;
-      &lt;td&gt;Zesty(17.04), Xenial (16.04 LTS)&lt;/td&gt;
-      &lt;td&gt;http://wiki.ros.org/lunar/Installation/Ubuntu&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Kinetic&lt;/td&gt;
-      &lt;td&gt;Xenial (16.04 LTS), Wily (15.10)&lt;/td&gt;
-      &lt;td&gt;http://wiki.ros.org/kinetic/Installation/Ubuntu&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Jade&lt;/td&gt;
-      &lt;td&gt;Ubuntu 15.04&lt;/td&gt;
-      &lt;td&gt;http://wiki.ros.org/jade/Installation/Ubuntu&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Indigo&lt;/td&gt;
-      &lt;td&gt;Saucy (13.10) and Trusty (14.04)&lt;/td&gt;
-      &lt;td&gt;http://wiki.ros.org/indigo/Installation/Ubuntu&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;This time, I studied a few standard
+motion planning algorithms and started
+thinking of how to simulate them. At
+this point, I must admit the MATLAB is
+not one of my favourites and I always
+try to find a reason for using C++. This
+was the perfect opportunity since I
+could not find a simple framework to
+simulate these algorithms and I admit
+that I did not try hard enough (or try at
+all! ). I convinced myself that this task
+was too computationally intensive to be
+handled by python and the only option I had was to use C++. I ended up writing about 200 lines of code to display a minimal (ugly) GUI which allowed the user to
+load a map (Illustration 1) and select the starting and ending points for
+computing the path and the program would then show an animation of the
+planning algorithm finding the path. I showed it to my mentor, he liked it and
+encouraged me to simulate another algorithm. This time, I decided, as any good
+software engineer would do, that I should divide my program into modules which
+share their functionality instead of replicating the code for every simulation I
+make. It was this second simulation which changed the direction of my summer
+project altogether.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Install Arduino IDE using the following command&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install java-common
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install arduino
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Install rosserial&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo apt-get install ros-kinetic-rosserial ros-kinetic-rosserial-server ros-kinetic-rosserial-arduino ros-kinetic-rosserial-python
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Please replace kinetic with the ROS distribution you are using.&lt;/p&gt;
+&lt;p&gt;Long story short, I had now completely forgotten about the original problem
+statement and was focusing on problems like: How to factor out the pathplanning
+algorithms into composable components? What are the basic
+components of a path planning problem? What would a sensible API for path
+planning look like? I tackled these questions for 5-6 weeks while writing some
+prototypes, making flowcharts etc.&lt;/p&gt;
 
-&lt;h3 id=&quot;verify-your-installation-for-ros&quot;&gt;Verify your installation for ROS&lt;/h3&gt;
-&lt;p&gt;In two seperate terminal window execute these two commands and verify whether a blue window opens up with a turtle in its center or not.&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;roscore
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;rosrun turtlesim turtlesim_node
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;setting-up-your-ros-workspace&quot;&gt;Setting up your ROS Workspace&lt;/h2&gt;
-&lt;p&gt;Run the following commands in series to setup your workspace.&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir -p ~/catkin_ws/src
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/catkin_ws/
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;catkin_make
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Now run this command&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;gedit ~/.bashrc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;and add this &lt;strong&gt;source ~/catkin_ws/devel/setup.bash&lt;/strong&gt; at the end of the .bashrc file.&lt;/p&gt;
+&lt;p&gt;While I was brainstorming on the design of this library, I would think of the
+behavior of each of the component on an algorithm, does it form a logical entity?
+What behaviors of the component to hide and what to expose to the user? Are
+the classes in this code a good representation of the objects in real world? I do
+not remember what all were the ideas I came up with since it has been almost an
+year since I started working on it but what I do remember is how after several
+weeks I was finally happy with the design after about 5 complete rewrites of the
+entire code (over ~1.5k lines of code). Here is the structure I came up with:&lt;/p&gt;
 
-&lt;h2 id=&quot;setting-up-your-arduino-ide&quot;&gt;Setting up your Arduino IDE&lt;/h2&gt;
-&lt;p&gt;First of all run the following commands one by one. Replace (sketchbook) with your exact location of Arduino IDE sketchbook.
-To know your sketchbook location open Arduino IDE goto File » Preference there you will get the location.&lt;/p&gt;
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/catkin_ws/src
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/ros-drivers/rosserial.git
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/catkin_ws/
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;catkin_make
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;rosrun rosserial_arduino make_libraries.py &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;sketchbook&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/libraries
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;verify-for-arduino-ide-setup&quot;&gt;Verify for Arduino IDE setup&lt;/h3&gt;
-&lt;p&gt;Open Arduino IDE and check whether you can see &lt;strong&gt;ros_lib&lt;/strong&gt; folder inside Examples.&lt;/p&gt;</content><author><name></name></author><summary type="html">ROS-Lecture This repo contains all the codes and files which will be used during the lecture so it is suggested to clone this repo to your local PC. Further instructions are given below please follow them for a smooth conduct. You are also advised to download the lecture slides from HERE and the cheatsheat provided in this repo, use that to know about command line tools.</summary></entry><entry><title type="html">My Band!</title><link href="http://localhost:4000/2017/02/06/MiBand.html" rel="alternate" type="text/html" title="My Band!" /><published>2017-02-06T00:00:00+05:30</published><updated>2017-02-06T00:00:00+05:30</updated><id>http://localhost:4000/2017/02/06/MiBand</id><content type="html" xml:base="http://localhost:4000/2017/02/06/MiBand.html">&lt;p&gt;Recently, I bought the &lt;a href=&quot;http://www.mi.com/in/miband2/&quot;&gt;Redmi Band 2&lt;/a&gt;. There was not any particular intention behind it, just that I wanted to try one of those fitness bands/smart watches and the latter was pretty expensive :-P.&lt;/p&gt;
+&lt;figure class=&quot;blog-image&quot; style=&quot;width: ;&quot;&gt;
+	
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-flowchart.png&quot; alt=&quot;Illustration 2: Major components. The arrows denote what a typical workflow looks like. The worspace
+and problem definition are given to a motion planner which consists of a graph builder, a graph search
+and an interpolation method. The planner outputs a path. Each of these components can be visualized.&quot; /&gt;
+  	
+  &lt;figcaption style=&quot;font-size: 80%&quot;&gt;&lt;i&gt;Illustration 2: Major components. The arrows denote what a typical workflow looks like. The worspace
+and problem definition are given to a motion planner which consists of a graph builder, a graph search
+and an interpolation method. The planner outputs a path. Each of these components can be visualized.&lt;/i&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;So, this post is going to be a little diversion from the ‘communication series’.
-(I will be adding tags to the posts, so as to differentiate them. Please bear with me till then. Also, you would be able to ‘follow’ this blog in near future!)&lt;/p&gt;
+&lt;p&gt;Workspace contains the map of the environment. I defined it as a separate class
+so that it is possible to hide the implementation from other modules. Problem
+definition contains start and end points at the moment. It can be extended to
+incorporate way-points or other path constraints that the user might be interested
+in. The graph builder takes a workspace and discards all the information not
+required for planning the path thus forming a good representation of the
+workspace. The graph search algorithm searches this graph for paths which are
+then interpolated using the interpolator to generate smooth paths.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/MiBand.jpg&quot; alt=&quot;The hero of the post! - My Mi Band 2&quot; /&gt;
-&lt;strong&gt;The hero of the post! - My Mi Band 2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Workspace contains the map of the environment. I defined it as a separate class
+so that it is possible to hide the implementation from other modules. Problem
+definition contains start and end points at the moment. It can be extended to
+incorporate way-points or other path constraints that the user might be interested
+in. The graph builder takes a workspace and discards all the information not
+required for planning the path thus forming a good representation of the
+workspace. The graph search algorithm searches this graph for paths which are
+then interpolated using the interpolator to generate smooth paths.&lt;/p&gt;
 
-&lt;p&gt;The band has some awesome sensors packed into it. And seems that they are power efficient too(I charge once in almost 3 weeks). One of the sensors is the heart rate sensor - I did not know anything about how they work, so I decided to look it up!&lt;/p&gt;
+&lt;p&gt;I won’t go more into the library in this post since the library has some
+documentation at &lt;a href=&quot;http://lakshayg.github.io/mpel/&quot;&gt;lakshayg.github.io/mpel&lt;/a&gt;. The source code for this library is
+available on GitHub at &lt;a href=&quot;https://github.com/lakshayg/mpel&quot;&gt;github.com/lakshayg/mpel&lt;/a&gt;. I would recommend you to
+visit the link and have a look at the library and feel free to make changes and
+contribute to the code. I close this post with some examples of paths generated
+using different path planning algorithms:&lt;/p&gt;
 
-&lt;p&gt;Turns out that the heart rate sensor is pretty cool stuff - there is major science(or biology?) behind it. Have you ever turned on a torch and pressed it into your palm? If you have, did you see the red glow? You might have guessed it right - that’s your blood happily flowing about! The heart rate sensors, or more specifically the optical heart rate sensor, uses photoplethysmography(PPG). 
-PPG essentially means that when the heart pumps and consequentially the volume of blood through any organ increases momentarily, it causes a change in the amount of light reflected/absorbed. Heart rate sensors consist of a LED(mostly green) and a photosensor. The LED is continuously on and shining on your skin. When heart pumps, the volume of blood increases and hence does the absorption of light. So there is a change in the otherwise DC signal received by the photosensor. The frequency of this change is exactly what your heart rate is.&lt;/p&gt;
+&lt;figure class=&quot;blog-image&quot; style=&quot;width: 45%;&quot;&gt;
+	
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-path001.png&quot; alt=&quot;&quot; /&gt;
+  	
+  &lt;figcaption style=&quot;font-size: 80%&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/HeartRateSensor.jpg&quot; alt=&quot;The Heart Rate Sensor in Action!&quot; /&gt;
-&lt;strong&gt;The Heart Rate Sensor in Action!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;From the signal received by the photosensor, the DC component(the LED was continuously on) is filtered out and so is the high-frequency noise. The low-frequency signal is then amplified and its frequency determined.
-But, it does not end here. These sensors face a lot of issues. Their working depends on your skin tone(also whether you are wearing a tattoo or not), where you have placed it on your body(which tissue is reflecting the light), other noises due to movement of the sensor etc. There are filtering algorithms in place for these. As for my Mi Band, it has some pretty good algorithms in place. It succeeds in giving accurate readings most times.&lt;/p&gt;
-
-&lt;p&gt;There are other features in my band - pedometer, Bluetooth connectivity, setting up alarms, idle alert etc. I hope I will be able to look up most of these, if not all, soon and come back with another post!&lt;/p&gt;</content><author><name></name></author><summary type="html">Recently, I bought the Redmi Band 2. There was not any particular intention behind it, just that I wanted to try one of those fitness bands/smart watches and the latter was pretty expensive :-P.</summary></entry><entry><title type="html">I ‘AM’ Radio</title><link href="http://localhost:4000/2017/01/22/I-AM-Radio.html" rel="alternate" type="text/html" title="I 'AM' Radio" /><published>2017-01-22T00:00:00+05:30</published><updated>2017-01-22T00:00:00+05:30</updated><id>http://localhost:4000/2017/01/22/I%20AM%20Radio</id><content type="html" xml:base="http://localhost:4000/2017/01/22/I-AM-Radio.html">&lt;p&gt;In my last two posts, I talked about telegraph and telephone. Both these modes were wired. The entire country of USA had wires running across it so as to connect all states through this medium. Shortly after this followed the laying down of the transatlantic cable. In the late nineteenth century, as both these modes of communication were gaining popularity, there was an increasing need for a ‘wireless’ mode of communication.&lt;/p&gt;
-
-&lt;p&gt;Maxwell had already shaken the scientific community as he proved the existence of ‘electromagnetic waves’ - changing electric field induced a changing magnetic field and vice versa. Most, however, did not immediately realize how those four differential equations were going to shape the world and form the basis of the communication technology we know today.&lt;/p&gt;
-
-&lt;p&gt;Hertz became the first ever to claim transmission of these electromagnetic waves, thus proving Maxwell’s theory. His experimental set-up can be seen in the figure below. When a high voltage was applied across the metal plates, a spark could be seen between the metal spheres. This spark essentially consisted of electrons that were dancing around (more specifically, oscillating at the resonant frequency of the L-C circuit). According to the theory, these electrons must transmit electromagnetic waves. This was found to be true as a spark could be seen across the metal spheres of the metal ring which was electrically isolated from the transmitting circuit.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.antonine-education.co.uk/Image_library/Physics_5_Options/Turning_points/hertz.gif&quot; alt=&quot;The Hertz Experiment&quot; /&gt; 
- &lt;strong&gt;The Hertz Experiment&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Electromagnetic waves really did exist. It was then that Marconi, who we know today as the father of radio, conceptualized and successfully implemented wireless telegraphy. He transmitted Morse code over radio waves. How did he do so? Marconi used a spark-gap transmitter and crystal radio receivers. A relatively fun explanation of the spark gap transmitter can be found &lt;a href=&quot;http://www.hammondmuseumofradio.org/spark.html&quot;&gt;here&lt;/a&gt;. As for the ‘crystal radio’, it was called so because it used a semiconductor crystal to demodulate the received RF signal. For the purposes of transmission of Morse code, it was done so by turning the Rf on and off. The RF still could not carry audio signals.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://regmedia.co.uk/2015/02/20/marconi_and_transmission_equipment.jpg?x=1200&amp;amp;y=794&quot; alt=&quot;Guglielmo Marconi - The scientist who had no formal education&quot; /&gt;
-&lt;strong&gt;Guglielmo Marconi - The scientist who had no formal education&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The first AM voice transmission was made by Canadian researcher Reginald Fessenden on 23 December 1900. If you know a little bit about spark gap generators - they produced damped waves. Fessenden realized that in order to transmit audio, one need ‘CW’ - or continuous waves that could then be ‘modulated’. He developed his own transmitter, better known as the Alexanderson alternator. He also developed the concept of AM waves - Amplitude Modulated Waves. Radio as we know it today was born.&lt;/p&gt;</content><author><name>Shashi Kant, EE, Y16 || Member of HURO</name></author><summary type="html">In my last two posts, I talked about telegraph and telephone. Both these modes were wired. The entire country of USA had wires running across it so as to connect all states through this medium. Shortly after this followed the laying down of the transatlantic cable. In the late nineteenth century, as both these modes of communication were gaining popularity, there was an increasing need for a ‘wireless’ mode of communication.</summary></entry><entry><title type="html">Good Old Telephone</title><link href="http://localhost:4000/2017/01/12/Good-Old-Telephone.html" rel="alternate" type="text/html" title="Good Old Telephone" /><published>2017-01-12T00:00:00+05:30</published><updated>2017-01-12T00:00:00+05:30</updated><id>http://localhost:4000/2017/01/12/Good%20Old%20Telephone</id><content type="html" xml:base="http://localhost:4000/2017/01/12/Good-Old-Telephone.html">&lt;p&gt;Long Distance communication had been made possible by telegraph. But, it was still Morse Code. It was a tedious task to learn the code and one would have to go the telegraph office to send/receive one. Admist all this, telephone was discovered.&lt;/p&gt;
-
-&lt;p&gt;As I stated in the previous post, the telegraph transmitted ‘signal’ when its switch was closed. The only control over this was ‘when to turn it off and on’. Hence only something on the lines of Morse code could be transmitted. Alexander Graham Bell must have realized the power of electrical microphones and speaker(Although it is debatable whether Bell was actually the first one to do it). One could convert voice into an electrical signal and send it over the same wire. One could also receive the same signal and convert it into audio. Kaboom! Telephone was born. Imagine Watson’s reaction when he heard Bell’s voice coming out of nowhere - when he heard the first ever telephonic message -  “Watson, come here! I want to see you!”.&lt;/p&gt;
-
-&lt;p&gt;The two most essential devices that make up the telephone - microphone and speaker work on the same principle. When you speak into a microphone, a ‘diaphgram’ vibrates. Along with this vibrates a coil of conducting wire. The coil is placed in the field of a permanent magnet. Its movement causes the magnetic flux through it to change and and electric current begins to flow thorugh it. Voice has now been successfully turned into electric signal.  Speakers work on the same principle. It is just that they work in reverse.&lt;/p&gt;
-
-&lt;p&gt;This was pretty much an elementary model of the working of a telephone. But I still had some questions.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;How do telephones work without electricity?&lt;/strong&gt;
-If you have had a ‘landline’ at home and have had the ‘opportunity’ of experiencing a power cut, I hope you had noticed that your telephone still works without electricity. This is because, your ‘connection’ to the exchange is also supplying you power - 48V DC. This goes back to a time when all domestic establishments did not have power connections, hence the telephone exchange took it upon itself to supply enough power to make the telephone ‘ring’.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What is it with starting all telephonic conversations with ‘Hello’?&lt;/strong&gt;
-The credit goes to Thomas Edison who popularized the idea. The first ever telephone directory also suggested its users to do so. Bell thought the better word was ‘Ahoy’.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What is it with dialpad tones?&lt;/strong&gt;
-These are called DTMF - Dual Tone Multiple Frequencies tones. Tone dialling is actually a way to communicate the number you want to connect to, to the telephone exchange. All numbers 0-9, * and #, each have two frequencies assigned to them. When you ‘dial’ a number, the corresponding frequencies are generated and sent over the wire. You should be able to dial a number if you are able to reproduce the exact same frequencies.&lt;/p&gt;
-
-&lt;p&gt;That’s all for this post! 
-Up next : Radio&lt;/p&gt;</content><author><name></name></author><summary type="html">Long Distance communication had been made possible by telegraph. But, it was still Morse Code. It was a tedious task to learn the code and one would have to go the telegraph office to send/receive one. Admist all this, telephone was discovered.</summary></entry><entry><title type="html">– — .-. … . -.-. — -.. .</title><link href="http://localhost:4000/2017/01/08/Morse-Code.html" rel="alternate" type="text/html" title="-- --- .-. ... .  -.-. --- -.. ." /><published>2017-01-08T00:00:00+05:30</published><updated>2017-01-08T00:00:00+05:30</updated><id>http://localhost:4000/2017/01/08/Morse-Code</id><content type="html" xml:base="http://localhost:4000/2017/01/08/Morse-Code.html">&lt;p&gt;Its funny how we do not realize how much easier life has become due to technology. We are today in the age of 4G, theorizing 5G. It all came down from when wired and subsequently radio communication first kicked off. It has only been a little more than a century since Marconi came up with his radio in 1901 and here we are!&lt;/p&gt;
-
-&lt;p&gt;My father is an amateur HAM radio enthusiast. I have grown up hearing all the jargon assosciated with radio communication. I thought its time that I really learn about them. I plan to come up with a series of posts about ‘Communication’. This is the kick starter - Morse Code!&lt;/p&gt;
-
-&lt;p&gt;Morse Code made up for the earliest radio communication - even before it was possible to transmit voice. It is a series of dot(or dits) and dashes(or dahs) which when decoded, make perfect sense. The length of the code assosciated with each letter is inversely proportional to its frequency of use in the English Language. This was an effort to increase the speed with which Morse Code in transmitted - often measured in terms of wpm(words per minute).&lt;/p&gt;
-
-&lt;p&gt;Morse Code was first used by its inventor-Morse over an electrical telegraph. It gradually evolved to being transmitted over radio waves. This was the first time ever that aviation and marine communication became a reality. We all know that Mayday was preceded by …- - -… .&lt;/p&gt;
-
-&lt;p&gt;I would not talk about how morse code is transmitted over radio waves - that is for another post on Radio itself. Here I want to talk about the electrical telegraph. Wikipedia defines telegraphy as the long distance transmission of textual or symbolic messages without the physical exchange of an object bearing the message. Easy enough. Not much science goes behind working of a telegraph. The working of an electric telegraph is essentially synonymous with switching on and off of an electric circuit. The switch is fondly called the ‘morse key’. The circuit is as shown below&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/simple_telegraph_circuit.jpg&quot; alt=&quot;The circuit of a telegraph&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;On pressing the switch, the circuit completes and current flows. This is turn makes the electromagnet jump into action and it pulls the armature towards itself. The pen, which is attached to the armature now leaves an impression on the moving paper strip. The transmission is now complete! Here is what a ‘strip of transmitted message’ looks like. This is actually the first ever telegraphic message which reads: “What hath God wrought?” - sent by Morse himself.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/first_telegraphic_message.gif&quot; alt=&quot;First ever telegraph message!&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Today as morse code is slowly bidding us farewell, we still get it to hear about it sometimes. I bet the 90s kids know the famous …- -… which is more synonymous with the Nokia SMS tune than Morse code itself. Still, some radio enthusiasts are keeping it alive. Maybe, next you want to get creative with your letters or cards - use Morse Code!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.loc.gov/item/mmorse000107&quot;&gt;For a better look at the first ever telegraph message&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Its funny how we do not realize how much easier life has become due to technology. We are today in the age of 4G, theorizing 5G. It all came down from when wired and subsequently radio communication first kicked off. It has only been a little more than a century since Marconi came up with his radio in 1901 and here we are!</summary></entry><entry><title type="html">First Post Ever!</title><link href="http://localhost:4000/2016/06/14/Hello-World.html" rel="alternate" type="text/html" title="First Post Ever!" /><published>2016-06-14T00:00:00+05:30</published><updated>2016-06-14T00:00:00+05:30</updated><id>http://localhost:4000/2016/06/14/Hello-World</id><content type="html" xml:base="http://localhost:4000/2016/06/14/Hello-World.html">&lt;p&gt;You know what is the most difficult part of web development? Especially in case of a personal blog/portfolio? It is the content! So, I have not yet decided what can possibly be my first post ever…&lt;/p&gt;
-
-&lt;p&gt;So, my first post, as you might have figured out by now, is under construction.
-Hope to see you soon!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/404.jpg&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">You know what is the most difficult part of web development? Especially in case of a personal blog/portfolio? It is the content! So, I have not yet decided what can possibly be my first post ever…</summary></entry></feed>
+&lt;figure class=&quot;blog-image&quot; style=&quot;width: 45%;&quot;&gt;
+	
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-path002.png&quot; alt=&quot;&quot; /&gt;
+  	
+  &lt;figcaption style=&quot;font-size: 80%&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name>Lakshay Garg, EE, Y13 || Former member of Robocop, Also worked on IGVC.</name></author><summary type="html">This blog post is about my experience while developing a C++ library for motion planning during my third year “internship”. This is about how after failing to secure an internship for summers, I try to rescue my self-confidence by taking up an ambitious summer project. Going in a direction orthogonal to what was planned and finally making something I am proud of. This is both, my experiences and a very short introduction to the library I developed.</summary></entry></feed>

@@ -72,11 +72,18 @@ th, td{
   align-items: center;
 }
 
-img {
+.blog-image{
+  margin: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.blog-img {
   margin: auto;
-  display: block;
+  display: inline-block;
   max-width: 100%;
 }
+
 
 /*##### For Mobile #####*/
 @media (max-width: 900px) {
@@ -85,7 +92,4 @@ img {
 	    height: 350px;
 	}
 
-	img {
-		width: 100%;
-	}
 }

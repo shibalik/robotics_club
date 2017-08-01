@@ -17,21 +17,12 @@ style: blog
           {{ page.content }}
         </div>
         <div class="mdl-card__actions mdl-card--border">
-          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" disabled>
-          {{ page.author }}
-          </button>
-          <!-- <div class="mdl-layout-spacer"></div>
-          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" disabled>
-          {{ page.authorexp }}
-          </button> -->
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
 	    	<a href="{{ site.url }}/blog/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 	        	Back
           	</a>
           <div class="mdl-layout-spacer"></div>
           <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" disabled>
-          Written on: {{ page.date | date: "%B %e, %Y" }}
+          {{ page.author }} || {{ page.date | date: "%B %e, %Y" }}
           </button>
         </div>
       </div>
