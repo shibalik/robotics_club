@@ -1,3 +1,18 @@
+#proj-auv {
+  display: none;
+  -webkit-transition: all 2s ease-out;
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+#auv-tit {
+  -webkit-transition: height 1s;
+  -moz-transition: height 1s;
+  -o-transition: height 1s;
+  transition: height 1s;
+}
+
 .navigation .nav-proj {
   border-bottom: 4px solid #8bc34a;
 }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="https://shashikg.github.io/robotics_club_blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shashikg.github.io/robotics_club_blog/" rel="alternate" type="text/html" /><updated>2017-08-03T16:06:10+05:30</updated><id>https://shashikg.github.io/robotics_club_blog/</id><title type="html">Robotics Club</title><entry><title type="html">When you plan it right</title><link href="https://shashikg.github.io/robotics_club_blog/2017/07/30/When-you-plan-it-right.html" rel="alternate" type="text/html" title="When you plan it right" /><published>2017-07-30T00:00:00+05:30</published><updated>2017-07-30T00:00:00+05:30</updated><id>https://shashikg.github.io/robotics_club_blog/2017/07/30/When%20you%20plan%20it%20right</id><content type="html" xml:base="https://shashikg.github.io/robotics_club_blog/2017/07/30/When-you-plan-it-right.html">&lt;p&gt;This blog post is about my experience while developing a C++ library for motion
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-15T23:56:26+05:30</updated><id>http://localhost:4000/</id><title type="html">Robotics Club</title><entry><title type="html">When you plan it right</title><link href="http://localhost:4000/2017/07/30/When-you-plan-it-right.html" rel="alternate" type="text/html" title="When you plan it right" /><published>2017-07-30T00:00:00+05:30</published><updated>2017-07-30T00:00:00+05:30</updated><id>http://localhost:4000/2017/07/30/When%20you%20plan%20it%20right</id><content type="html" xml:base="http://localhost:4000/2017/07/30/When-you-plan-it-right.html">&lt;p&gt;This blog post is about my experience while developing a C++ library for motion
 planning during my third year “internship”. This is about how after failing to
 secure an internship for summers, I try to rescue my self-confidence by taking up
 an ambitious summer project. Going in a direction orthogonal to what was
@@ -25,7 +25,7 @@ at a later stage.&lt;/p&gt;
 
 &lt;figure class=&quot;blog-image&quot; style=&quot;width: ;&quot;&gt;
 	
-  		&lt;img class=&quot;blog-img&quot; src=&quot;https://shashikg.github.io/robotics_club_blog/blog/images/mpl-map.bmp&quot; alt=&quot;Illustration 1: This is what I mean by a 'map'.
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-map.bmp&quot; alt=&quot;Illustration 1: This is what I mean by a 'map'.
 Nothing fancy, just a bitmap where black denotes
 obstacles and white denotes the free region&quot; /&gt;
   	
@@ -74,7 +74,7 @@ entire code (over ~1.5k lines of code). Here is the structure I came up with:&lt
 
 &lt;figure class=&quot;blog-image&quot; style=&quot;width: ;&quot;&gt;
 	
-  		&lt;img class=&quot;blog-img&quot; src=&quot;https://shashikg.github.io/robotics_club_blog/blog/images/mpl-flowchart.png&quot; alt=&quot;Illustration 2: Major components. The arrows denote what a typical workflow looks like. The worspace
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-flowchart.png&quot; alt=&quot;Illustration 2: Major components. The arrows denote what a typical workflow looks like. The worspace
 and problem definition are given to a motion planner which consists of a graph builder, a graph search
 and an interpolation method. The planner outputs a path. Each of these components can be visualized.&quot; /&gt;
   	
@@ -110,14 +110,14 @@ using different path planning algorithms:&lt;/p&gt;
 
 &lt;figure class=&quot;blog-image&quot; style=&quot;width: 45%;&quot;&gt;
 	
-  		&lt;img class=&quot;blog-img&quot; src=&quot;https://shashikg.github.io/robotics_club_blog/blog/images/mpl-path001.png&quot; alt=&quot;&quot; /&gt;
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-path001.png&quot; alt=&quot;&quot; /&gt;
   	
   &lt;figcaption style=&quot;font-size: 80%&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class=&quot;blog-image&quot; style=&quot;width: 45%;&quot;&gt;
 	
-  		&lt;img class=&quot;blog-img&quot; src=&quot;https://shashikg.github.io/robotics_club_blog/blog/images/mpl-path002.png&quot; alt=&quot;&quot; /&gt;
+  		&lt;img class=&quot;blog-img&quot; src=&quot;http://localhost:4000/blog/images/mpl-path002.png&quot; alt=&quot;&quot; /&gt;
   	
   &lt;figcaption style=&quot;font-size: 80%&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;</content><author><name>Lakshay Garg, EE, Y13 || Former member of Robocop, Also worked on IGVC.</name></author><summary type="html">This blog post is about my experience while developing a C++ library for motion planning during my third year “internship”. This is about how after failing to secure an internship for summers, I try to rescue my self-confidence by taking up an ambitious summer project. Going in a direction orthogonal to what was planned and finally making something I am proud of. This is both, my experiences and a very short introduction to the library I developed.</summary></entry></feed>

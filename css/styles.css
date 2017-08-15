@@ -2,6 +2,16 @@
 /*########### Style sheet for theme ###############*/
 /*#################################################*/
 
+a {
+  text-decoration: none;
+}
+
+.rsrc{
+  color: #757575;
+  font-weight: 700;
+  font-size: 14px;
+}
+
 #feed-bar{
   /*background-color: #263238;*/
   display: block;
@@ -160,18 +170,19 @@ a img{
 }
 
 .slogan {
-  font-size: 80px;
+  font-size: 100px;
   padding-top: 160px;
 }
 
 .sub-slogan {
-  font-size: 31px;
+  font-size: 61px;
   padding-top: 24px;
 }
 
 .create-character {
-  font-size: 21px;
-  padding-top: 400px;
+  font-size: 50px;
+  padding-top: 320px;
+  font-family: 'PT Mono', monospace;
 }
 
 .create-character a {

@@ -21,7 +21,12 @@
       <nav class="navigation mdl-navigation">
         <a class="mdl-navigation__link mdl-typography--text-uppercase nav-blog" href="{{ site.url }}/blog/">Blog</a>
         <a class="mdl-navigation__link mdl-typography--text-uppercase nav-proj" href="{{ site.url }}/projects/">Projects</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase nav-tut" href="{{ site.url }}/tutorials/">Tutorials</a>
+        <div id="resource" class="mdl-menu__item mdl-navigation__link mdl-typography--text-uppercase nav-tut">Resources</div>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="resource">
+          <li class="mdl-menu__item"><a class="rsrc" href="{{ site.url }}/tutorials/">Tutorials</a></li>
+          <li class="mdl-menu__item"><a class="rsrc" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeZWcffCcfCyIO_Hg9fzuK4sEcqM1uB0guaL_NM8h0mJfvdSw/viewform">Component Issue</a></li>
+        </ul>
         <a class="mdl-navigation__link mdl-typography--text-uppercase nav-team" href="{{ site.url }}/team/">Team</a>
         <a class="mdl-navigation__link mdl-typography--text-uppercase nav-event" href="{{ site.url }}/events">Events</a>
         <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Know How??</a> -->
@@ -41,6 +46,7 @@
     <a class="mdl-navigation__link mdl-typography--text-uppercase nav-tut" href="{{ site.url }}/tutorials">Tutorials</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase nav-team" href="{{ site.url }}/team/">Team</a>
     <a class="mdl-navigation__link mdl-typography--text-uppercase nav-event" href="{{ site.url }}/events/">Events</a>
+    <a class="mdl-navigation__link mdl-typography--text-uppercase nav-tut" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeZWcffCcfCyIO_Hg9fzuK4sEcqM1uB0guaL_NM8h0mJfvdSw/viewform">Component Issue</a>
     <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Know How??</a> -->
   </nav>
 </div>
