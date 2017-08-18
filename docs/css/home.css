@@ -78,12 +78,44 @@
   position: relative;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #f3f3f3;
+  background-color: #fff;
 }
 
-.about-grid {
+.event-section {
+	position: relative;
+	height: 550px;
+	width: auto;
+	background: #009688; /* For browsers that do not support gradients */        
+    background: -webkit-linear-gradient(-90deg, #009688, #263238); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, #009688, #263238); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, #009688, #263238); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, #009688, #263238); /* Standard syntax (must be last) */
+	/*background: url('../assets/images/event-sec.jpg') center 30% no-repeat;*/
+	background-size: cover;
+}
+
+.event-title {
+	font-family: 'Orbitron', sans-serif;
+	color: #fff;
+	font-size: 50px;
+	line-height: 1.2;
+	padding-top: 200px;
+	/*vertical-align: middle;*/
+}
+
+.event-cards {
+	margin-top: 35px;
+	margin-bottom: 35px;
+	margin-right: 50px;
+	margin-left: 50px;
+	border: 1px solid #f3f3f3;
+    border-radius: 10px;
+}
+
+.event-grid {
 	padding: 0px;
 	margin: 0px;
+	height: 100%;
 }
 
 .about-content {
@@ -116,6 +148,9 @@
 	overflow-x: auto;
 }
 
+.abt-cnt {
+	font-size: large;
+}
 /*.gallery-grid{
 	padding: 0;
 }
@@ -127,10 +162,28 @@
 /*##### For Mobile #####*/
 @media (max-width: 900px) {
 	.hero-section {
-	    height: 350px;
+	    height: 300px;
+	}
+	.about-section {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.event-title {
+		padding-top: 20px;
+		font-size: 35px;
+	}
+	.abt-cnt {
+		font-size: medium;
 	}
 	.cmpt-section {
 	    height: 200px;
+	}
+	.event-section {
+		height: 800px;
+		background: -webkit-linear-gradient(-90deg, #009688, #009688); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(-90deg, #009688, #009688); /* For Opera 11.1 to 12.0 */
+	    background: -moz-linear-gradient(-90deg, #009688, #009688); /* For Firefox 3.6 to 15 */
+	    background: linear-gradient(-90deg, #009688, #009688); /* Standard syntax (must be last) */
 	}
 
 	  .cmpt-slogan {
