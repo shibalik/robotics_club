@@ -18,7 +18,7 @@
 
 .cordi-section {
   position: relative;
-  background-color: #37474F;
+  background-color: #263238;
   padding-bottom: 50px;
 }
 
@@ -43,7 +43,7 @@
   font-size: 18px;
 }
 .cordi-name{
-  font-family: 'Saira Condensed', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
   font-size: 25px;
   color: #f3f3f3;
   padding: 15px;
@@ -60,7 +60,7 @@
 
 .seci-section {
   position: relative;
-  background-color: #f3f3f3;
+  background-color: #EEEEEE;
   padding-bottom: 50px;
 }
 
@@ -78,14 +78,14 @@
 }
 
 .seci-details{
-  font-family: 'PT Mono', monospace;
+  font-family: 'Saira Condensed', sans-serif;
   background-color: #fff;
   color: #616161;
   padding: 15px;
-  font-size: 14px;
+  font-size: 18px;
 }
 .seci-name{
-  font-family: 'Pacifico', cursive;
+  font-family: 'Archivo Black', sans-serif;
 
   font-size: 25px;
   color: #f3f3f3;

@@ -6,6 +6,16 @@
   transition: all 2s ease-out;
 }
 
+#auv-exp {
+  height: 50px;
+  padding-left: 15px;
+}
+
+#huro-exp {
+  height: 50px;
+  padding-left: 15px;
+}
+
 #auv-tit {
   -webkit-transition: height 1s;
   -moz-transition: height 1s;
@@ -108,15 +118,14 @@
 }
 
 .m-prj-details{
-  font-family: 'PT Mono', monospace;
+  font-family: 'Saira Condensed', sans-serif;
   background-color: #fff;
   color: #616161;
   padding: 15px;
-  font-size: 14px;
+  font-size: 18px;
 }
 .m-prj-name{
-  font-family: 'Pacifico', cursive;
-
+  font-family: 'Archivo Black', sans-serif;
   font-size: 25px;
   color: #f3f3f3;
   padding: 15px;
@@ -139,6 +148,10 @@
   }
 
   #auv-tit {
+    max-height: 230px;
+  }
+
+  #huro-tit {
     max-height: 230px;
   }
 }
