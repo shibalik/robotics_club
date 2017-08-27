@@ -32,10 +32,11 @@
 .cmpt-section {
   position: relative;
   height: 550px;
-  width: auto;
+  
   background-color: #f3f3f3;
   background: url('../assets/images/cmpt-sec2.jpg') center no-repeat;
   background-size: cover;
+  width: auto;
 }
 
 .cmpt-logo-font {
@@ -106,32 +107,75 @@
 }
 
 .event-content {
-	height: 87%;
+	height: 85%;
 }
 
 .event-cards {
-	border: 1px solid #ECEFF1;
-    border-radius: 5px;
+	position: relative;
     height: 550px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-  /*opacity: 0.6;*/
+  
 	/*width: 70%;*/
 	margin-left: 0%;
 	margin-right:15%;
 }
 
+.event-tit{
+	padding-top: 50px;
+	font-family: 'Archivo Black', sans-serif;
+  font-size: 25px;
+  color: #f3f3f3;
+}
+
+.event-img {
+	/*position: absolute;*/
+	display: block;
+	height: 100%;
+	/*border-style: dotted;*/
+	background-size: cover;
+	opacity: 0.6;
+  /*width: auto;*/
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    transition: .5s ease;
+}
+
+.event-cards:hover .event-img {
+	opacity: 0;
+}
+
+.event-cards:hover .event-details {
+	opacity: 1;
+}
+
+.event-details {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	height: 100%;
+	color: #fff;
+	opacity: 0;
+	border: 1px dashed #ECEFF1;
+    border-radius: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    transition: .5s ease;
+}
+
 .m-prj-card.mdl-card {
-  width: 90%;
-  /*margin: auto;*/
-  height: 500px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  /*opacity: 0.6;*/
-	/*width: 70%;*/
-	margin-left: 5%;
-	margin-right: 5%;
-	/*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+  height: 550px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+  opacity: 0.6;
+	width: 85%;
+	margin-left: 0%;
+	margin-right:0%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -209,6 +253,13 @@
 
 /*##### For Mobile #####*/
 @media (max-width: 900px) {
+	.m-prj-card.mdl-card {
+  height: 400px;
+  margin: 5%;
+
+  /*opacity: 0.6;*/
+	width: 90%;
+}
 	.hero-section {
 	    height: 300px;
 	}
