@@ -1,0 +1,102 @@
+.hero-section {
+  position: relative;
+  height: 25vw;
+  width: auto;
+  /*background: url('../assets/images/ss/1.jpg') center 50% no-repeat;*/
+  background: #263238; /* For browsers that do not support gradients */        
+    background: -webkit-linear-gradient(-90deg, #004D40, #263238); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-90deg, #004D40, #263238); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, #004D40, #263238); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, #004D40, #263238); /* Standard syntax (must be last) */
+	/*background: url('../assets/images/event-sec.jpg') center 30% no-repeat;*/
+	background-size: cover;
+  z-index: 0;
+}
+
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent url(../assets/images/ss/pattern.png) repeat top left;
+    /*background-color: #263238;*/
+    /*opacity: 0.7;*/
+}
+
+.about-grid {
+	position: absolute;
+	height: 100%;
+}
+
+.abt-cnt {
+	/*font-family: 'PT Mono', monospace;*/
+	padding-top: 3vw;
+	color: #fff;
+	font-size: 1.2vw;
+	line-height: 1.7vw;
+	z-index: 1000;
+	opacity: 1;
+}
+
+.tak-tit {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 2.5vw;
+}
+
+.evnt-tit {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 2.5vw;
+}
+
+.robo-evnt-tit {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 30px;
+}
+
+.cmpt-btn {
+	/*position: absolute;*/
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  /*font-size: 80px;*/
+  border-radius: 3px;
+  /*margin-top: 450px;*/
+  color: #f3f3f3;
+  height: auto;
+  /*padding: 5px 25px 5px 25px;*/
+  border: solid #f3f3f3 1px;
+  text-decoration: none;
+}
+
+.cmpt-btn:hover {
+  text-decoration: none;
+}
+
+.team-reg {
+	background-color: #212121;
+	color: #fff;
+}
+
+@media (max-width: 900px) {
+	.abt-cnt {
+		font-size: small;
+		line-height: 1;
+	}
+
+	.robo-evnt-tit {
+		font-size: 20px;
+	}
+
+	.tak-tit, .evnt-tit{
+		font-family: 'Orbitron', sans-serif;
+		font-size: x-large;
+		padding: 0;
+		margin: 5px;
+	}
+
+	.hero-section {
+		height: 300px;
+	}
+}
