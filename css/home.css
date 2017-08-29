@@ -326,7 +326,8 @@
 	background-color: black;
 }
 
-.cb-slideshow {
+.cb-slideshow,
+.cb-slideshow:after {
     position: relative;
     padding: 0;
     margin: 0;
