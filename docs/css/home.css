@@ -337,13 +337,13 @@
     /*z-index: 0;*/
     overflow: hidden;
 }
-/*.cb-slideshow::after {
+.cb-slideshow::after {
 	position: absolute;
     content: '';
     background: transparent url(../assets/images/ss/pattern.png) repeat top left;
     background-color: #263238;
     opacity: 0.6;
-}*/
+}
 .cb-slideshow li span {
     width: 100%;
     height: 100%;
