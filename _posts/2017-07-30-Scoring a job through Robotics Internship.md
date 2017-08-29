@@ -1,9 +1,10 @@
 ---
 layout: post
-title: When you plan it right
+title: Scoring a job through Robotics Internship
 comments: true
-author: Lakshay Garg, EE, Y13 || Former member of Robocop, Also worked on IGVC.
+author: Lakshay Garg, EE, Y13 || Former member of Robocon, Also worked on IGVC.
 ---
+##### When you plan it right!
 
 This blog post is about my experience while developing a C++ library for motion
 planning during my third year “internship”. This is about how after failing to
