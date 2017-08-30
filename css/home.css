@@ -165,6 +165,14 @@
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     transition: .5s ease;
+    font-family: 'Orbitron', sans-serif;
+	color: #fff;
+	height: auto;
+	font-size: 1.5vw;
+	line-height: 2;
+	padding-right: 5px;
+	padding-left:  5px;
+	/*padding-top: 10vw;*/
 }
 
 .m-prj-card.mdl-card {

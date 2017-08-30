@@ -44,7 +44,8 @@
 }
 .cordi-name{
   font-family: 'Archivo Black', sans-serif;
-  font-size: 25px;
+  font-size: 18px;
+  line-height: 1.2;
   color: #f3f3f3;
   padding: 15px;
   background-color: #EF5350;
@@ -87,7 +88,8 @@
 .seci-name{
   font-family: 'Archivo Black', sans-serif;
 
-  font-size: 25px;
+  font-size: 18px;
+  line-height: 1.2;
   color: #f3f3f3;
   padding: 15px;
   background-color: #EF5350;

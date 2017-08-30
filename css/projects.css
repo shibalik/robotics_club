@@ -130,6 +130,7 @@
 
 .m-prj-details{
   display: none;
+  height: 0;
   font-family: 'Saira Condensed', sans-serif;
   background-color: #fff;
   color: #616161;
@@ -144,6 +145,7 @@
 
 .m-prj-card:hover .m-prj-details{
   display: block;
+  height: auto;
 }
 
 .m-prj-name{
