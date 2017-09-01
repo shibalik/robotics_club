@@ -3,6 +3,7 @@ layout: post
 title: Scoring a job through Robotics Internship
 comments: true
 author: Lakshay Garg, EE, Y13 || Former member of Robocon, Also worked on IGVC.
+excerpt_separator: <!--more-->
 ---
 ##### When you plan it right!
 
@@ -12,6 +13,7 @@ secure an internship for summers, I try to rescue my self-confidence by taking u
 an ambitious summer project. Going in a direction orthogonal to what was
 planned and finally making something I am proud of. This is both, my
 experiences and a very short introduction to the library I developed.
+<!--more-->
 
 Almost an year ago from now (03-07-2017 11:10 PM), the beginning of the
 summer break, I was at one of the lowest points during my stay at IIT Kanpur. I

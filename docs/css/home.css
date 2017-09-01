@@ -134,7 +134,7 @@
 	height: 100%;
 	/*border-style: dotted;*/
 	background-size: cover;
-	opacity: 0.6;
+	opacity: 01;
   /*width: auto;*/
     border-radius:5px;
     -moz-border-radius:5px;
@@ -301,6 +301,9 @@
 	    background: -moz-linear-gradient(-90deg, #009688, #009688); /* For Firefox 3.6 to 15 */
 	    background: linear-gradient(-90deg, #009688, #009688); /* Standard syntax (must be last) */
 	}
+	.event-details {
+		font-size: 20px;
+	}
 
 	  .cmpt-slogan {
 	    font-size: 26px;
@@ -320,6 +323,7 @@
 	.event-content {
 	height: 85%;
 }
+
 
 }
 

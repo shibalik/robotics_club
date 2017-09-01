@@ -56,3 +56,15 @@ background-color:  #46B6AC;
 .tut-card > .mdl-card__title {
   color: #fff;
 }
+
+@media (max-width: 900px) {
+
+	.evnt-tit{
+		font-size: xx-large;
+	}
+
+	.tut-section{
+		padding: 0;
+	}
+
+}
