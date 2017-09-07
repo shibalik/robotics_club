@@ -1,6 +1,6 @@
 name,one,two,three,link
-Introduction to IMU,Basics of IMU,Caliberation,,http://students.iitk.ac.in/roboclub/lectures/IMU.pdf
-PID control,Terminology,Advantage & Disadvantages of one over other,Implementation,http://students.iitk.ac.in/roboclub/lectures/PID.pdf
+Introduction to IMU,Basics of IMU,Calibration,,http://students.iitk.ac.in/roboclub/lectures/IMU.pdf
+Introduction to PID,Terminology,PID Controller,Implementation,http://students.iitk.ac.in/roboclub/lectures/PID.pdf
 Introduction to Arduino,Microcontrollers,Arduino: Introduction,Arduino IDE,http://students.iitk.ac.in/roboclub/lectures/Microcontrollers_Arduino.pdf
 Introduction to Designing,Inventor: Basics,,,http://students.iitk.ac.in/roboclub/lectures/INVENTOR.pdf
 Sensors & Actuators,Quantization,Different Sensors,Different Sensors,http://students.iitk.ac.in/roboclub/lectures/Sensors%20and%20Actuators.pdf

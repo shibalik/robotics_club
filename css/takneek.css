@@ -2,13 +2,11 @@
   position: relative;
   min-height: 25vw;
   width: auto;
-  /*background: url('../assets/images/ss/1.jpg') center 50% no-repeat;*/
   background: #263238; /* For browsers that do not support gradients */        
     background: -webkit-linear-gradient(-90deg, #004D40, #263238); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(-90deg, #004D40, #263238); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(-90deg, #004D40, #263238); /* For Firefox 3.6 to 15 */
     background: linear-gradient(-90deg, #004D40, #263238); /* Standard syntax (must be last) */
-	/*background: url('../assets/images/event-sec.jpg') center 30% no-repeat;*/
 	background-size: cover;
   z-index: 0;
 }
@@ -22,8 +20,6 @@
 	padding: 0;
 	margin: 0;
 	background: transparent url(../assets/images/ss/pattern.png) repeat top left;
-    /*background-color: #263238;*/
-    /*opacity: 0.7;*/
 }
 
 .about-grid {
@@ -32,7 +28,6 @@
 }
 
 .abt-cnt {
-	/*font-family: 'PT Mono', monospace;*/
 	padding-top: 3vw;
 	color: #fff;
 	font-size: 1.2vw;
@@ -61,15 +56,11 @@
 }
 
 .cmpt-btn {
-	/*position: absolute;*/
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
-  /*font-size: 80px;*/
   border-radius: 3px;
-  /*margin-top: 450px;*/
   color: #f3f3f3;
   height: auto;
-  /*padding: 5px 25px 5px 25px;*/
   border: solid #f3f3f3 1px;
   text-decoration: none;
 }
@@ -84,14 +75,8 @@
     background: -o-linear-gradient(-90deg, #004D40, #263238); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(-90deg, #004D40, #263238); /* For Firefox 3.6 to 15 */
     background: linear-gradient(-90deg, #004D40, #263238); /* Standard syntax (must be last) */
-	/*background: url('../assets/images/event-sec.jpg') center 30% no-repeat;*/
 	background-size: cover;
 	color: #fff;
-}
-
-.team-reg:hover {
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .evnt-lnk {
@@ -102,8 +87,22 @@
 
 .evnt-lnk:hover {
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+  background-color: #212121;
+  color: #fff;
+}
+
+
+.tak-lec {
+	padding-bottom: 20px;
+	background-color: #f3f3f3;
+}
+
+.team-reg:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
 
 @media (max-width: 900px) {
 	.abt-cnt {
