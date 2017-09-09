@@ -102,6 +102,15 @@
 /*##### For Mobile #####*/
 @media (max-width: 900px) {
 
+	.seci-card.mdl-card{
+		height: 350px;
+	}
+
+	.cordi-card.mdl-card{
+		height: 350px;
+	}
+
+
   .team-sec {
     font-size: 40px;
     margin: 0;
