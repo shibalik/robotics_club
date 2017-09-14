@@ -76,7 +76,7 @@
     background: -moz-linear-gradient(-90deg, #004D40, #263238); /* For Firefox 3.6 to 15 */
     background: linear-gradient(-90deg, #004D40, #263238); /* Standard syntax (must be last) */
 	background-size: cover;
-	color: #fff;
+	/*color: #fff;*/
 }
 
 .evnt-lnk {
