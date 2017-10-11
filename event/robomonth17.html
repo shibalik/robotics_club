@@ -25,31 +25,46 @@ permalink: /event/robomonth17
             </div>
 
             <div class="mdl-tabs__panel" id="schedule-panel">
-              will be updated soon...
+              <div class="mdl-grid">
+                {% for sch in site.data.rmsch %}
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                  <div class="sch-card mdl-card">
+                    <div class="cmt-tit mdl-card__title">
+                      <h2 class="mdl-card__title-text">{{sch.name}}</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-card--border">
+                      <b>When?</b> {{sch.when}}
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-card--border">
+                      <b>Where?</b> {{sch.where}}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
             <div class="mdl-tabs__panel" id="lec-panel">
               will be updated soon
             </div>
             <div class="mdl-tabs__panel is-active" id="competitions-panel">
+              {% for cmt in site.data.rmcmt %}
               <div class="cmt-card mdl-card">
                 <div class="cmt-tit mdl-card__title">
-                  <h2 class="mdl-card__title-text">Follow Me Around</h2>
+                  <h2 class="mdl-card__title-text">{{cmt.title}}</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                  A classic control systems problem statement which involves <b>line following</b> and <b>wall following.</b> Participants should expect to learn tuning a controller besides constructing a basic bot chassis along with necessary sensors.
-                </div>
-                <div class="mdl-card__supporting-text">
-                  <b>Target Junta:</b> Freshers and Sophomores (and all other robotics enthusiasts)
+                  {{cmt.content}}
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                  <a target="_blank" href={{ "/assets/docs/Line_Wall_Following.pdf" | absolute_url }} class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  <a target="_blank" href="../assets/docs/{{ cmt.prob }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Problem Statement
                   </a>
-                  <a target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  <a target="_blank" href="{{cmt.reg}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Register
                   </a>
                 </div>
               </div>
+              {% endfor %}
             </div>
             <div class="mdl-tabs__panel" id="results-panel">
               will be updated soon

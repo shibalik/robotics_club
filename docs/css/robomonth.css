@@ -24,6 +24,17 @@
   border-color: #f0f0f0;
 }
 
+.sch-card{
+  width: 95%;
+  /*margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;*/
+  border-width: thin;
+  margin: 2.5%;
+  border-style: solid;
+  border-color: #f0f0f0;
+}
+
 #overlay {
 	position: absolute;
 	height: 100%;

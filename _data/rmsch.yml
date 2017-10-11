@@ -1,0 +1,19 @@
+- name: Sensors Lecture
+  when: 8PM, 11th Oct, Wed
+  where: L1
+
+- name: Sensors Lecture
+  when: 8PM, 11th Oct, Wed
+  where: L1
+
+- name: Sensors Lecture
+  when: 8PM, 11th Oct, Wed
+  where: L1
+
+- name: Sensors Lecture
+  when: 8PM, 11th Oct, Wed
+  where: L1
+
+- name: Sensors Lecture
+  when: 8PM, 11th Oct, Wed
+  where: L1
