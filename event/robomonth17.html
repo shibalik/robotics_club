@@ -2,7 +2,6 @@
 title: RoboMonth' 17 | Events
 layout: default
 style: robomonth
-permalink: /event/robomonth17
 ---
 
 <div class="robomonth-card-cont mdl-typography--text-justify">
@@ -25,26 +24,35 @@ permalink: /event/robomonth17
             </div>
 
             <div class="mdl-tabs__panel" id="schedule-panel">
-              <div class="mdl-grid">
-                {% for sch in site.data.rmsch %}
-                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-                  <div class="sch-card mdl-card">
-                    <div class="cmt-tit mdl-card__title">
-                      <h2 class="mdl-card__title-text">{{sch.name}}</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--border">
-                      <b>When?</b> {{sch.when}}
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--border">
-                      <b>Where?</b> {{sch.where}}
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
+              <div class="sch-grid mdl-grid">
+                <table class="sch-table mdl-data-table mdl-js-data-table">
+                  <thead>
+                    <tr>
+                      <th class="mdl-data-table__cell--non-numeric">Event</th>
+                      <th class="mdl-data-table__cell--non-numeric">When</th>
+                      <th class="mdl-data-table__cell--non-numeric">Where</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for sch in site.data.rmsch %}
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">{{sch.name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{sch.when}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{sch.where}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
               </div>
             </div>
             <div class="mdl-tabs__panel" id="lec-panel">
-              will be updated soon
+              <div class="mdl-grid">
+                {% for lec in site.data.rmlec %}
+                    <a class="lec-btn mdl-button mdl-js-button mdl-js-ripple-effect mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" target="_blank" href="../assets/docs/{{ lec.link }}">
+                    {{lec.name}}
+                    </a>
+                {% endfor %}
+              </div>
             </div>
             <div class="mdl-tabs__panel is-active" id="competitions-panel">
               {% for cmt in site.data.rmcmt %}

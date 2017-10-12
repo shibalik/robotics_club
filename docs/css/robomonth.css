@@ -1,5 +1,4 @@
 .robomonth-card-cont{
-  /*background-color: #f3f3f3;*/
   width: 100%;
   background: #263238; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(135deg, #1B5D70, #6FA623); /* For Safari 5.1 to 6.0 */
@@ -13,22 +12,36 @@
   background-color: #f0f0f0;
 }
 
-.cmt-card{
+.sch-table{
   width: 95%;
-  /*margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;*/
   border-width: thin;
   margin: 2.5%;
-  border-style: solid;
-  border-color: #f0f0f0;
 }
 
-.sch-card{
+.sch-grid{
+  overflow: scroll;
+}
+
+.lec-grid{
   width: 95%;
-  /*margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;*/
+  margin: 2.5%;
+}
+
+.lec-btn{
+  background-color: #00AA8D;
+  color: #fff;
+  padding: 25px;
+  height: auto;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.lec-btn:hover{
+  background-color: #00BF9A;
+}
+
+.cmt-card{
+  width: 95%;
+  height: auto;
   border-width: thin;
   margin: 2.5%;
   border-style: solid;
@@ -56,7 +69,6 @@
 }
 
 #overlay2 {
-	/*position: absolute;*/
 	height: 100%;
 	width: 100%;
 	top: 0;
