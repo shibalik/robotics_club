@@ -84,6 +84,17 @@
   padding: 0;
 }
 
+.gallery-img{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.vidrb{
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 @media (max-width: 900px) {
   #robomonth-tit{
     height: 200px;

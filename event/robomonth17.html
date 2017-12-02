@@ -45,6 +45,7 @@ style: robomonth
                 </table>
               </div>
             </div>
+
             <div class="mdl-tabs__panel" id="lec-panel">
               <div class="mdl-grid">
                 {% for lec in site.data.rmlec %}
@@ -54,7 +55,7 @@ style: robomonth
                 {% endfor %}
               </div>
             </div>
-            <div class="mdl-tabs__panel is-active" id="competitions-panel">
+            <div class="mdl-tabs__panel" id="competitions-panel">
               {% for cmt in site.data.rmcmt %}
               <div class="cmt-card mdl-card">
                 <div class="cmt-tit mdl-card__title">
@@ -75,10 +76,94 @@ style: robomonth
               {% endfor %}
             </div>
             <div class="mdl-tabs__panel" id="results-panel">
-              will be updated soon
+              <div class="sch-grid mdl-grid">
+                <table class="sch-table mdl-data-table mdl-js-data-table">
+                  <thead>
+                    <tr>
+                      <th class="mdl-data-table__cell--non-numeric">Event</th>
+                      <th class="mdl-data-table__cell--non-numeric">Position</th>
+                      <th class="mdl-data-table__cell--non-numeric">Team Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Follow Me Around</td>
+                      <td class="mdl-data-table__cell--non-numeric">Honourable Mention</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                        <li>Rahul Sanjay Parte
+                        <li>Naishadh Nimesh Parmar
+                        <li>Yash Maheshwari
+                        <li>Inshu Namdev
+                        <li>Ayush Gupta
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Design Challenge</td>
+                      <td class="mdl-data-table__cell--non-numeric">1st Position</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                        <li>Saroj Anjesh
+                        <li>J Nikhil Babu
+                        <li>Sanjay Singh Rana
+                        <li>Sarvesh Choudhary
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Design Challenge</td>
+                      <td class="mdl-data-table__cell--non-numeric">2nd Position</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                        <li>Ratnangshu Das
+                        <li>Sayak Charabarty
+                        <li>Triptesh Biswas
+                        <li>Abhishek Singh
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div class="mdl-tabs__panel" id="gallery-panel">
-              will be updated soon
+            <div class="mdl-tabs__panel is-active" id="gallery-panel">
+              <div class="gallery-img">
+              {% include gallery.html %}
+              <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:960px;height:480px;overflow:hidden;visibility:hidden;background-color:#24262e;">
+                <!-- Loading Screen -->
+                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+                </div>
+                <div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;">
+                    <div>
+                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/1.jpg" />
+                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/1.jpg" />
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/2.jpg" />
+                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/2.jpg" />
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/3.jpg" />
+                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/3.jpg" />
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/4.jpg" />
+                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/4.jpg" />
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/5.jpg" />
+                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/5.jpg" />
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/6.jpg" />
+                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/6.jpg" />
+                    </div>
+                </div>
+                {% include gallery_nav.html %}
+              </div>
+              <script type="text/javascript">jssor_1_slider_init();</script>
+              </div>
+              <div class="vidrb" style="max-width: 960px;">
+              <a target="_blank" href="https://www.youtube.com/watch?v=LAYzk7_0QZE">
+    			  		<iframe width="560" height="350" src="https://www.youtube.com/embed/LAYzk7_0QZE" frameborder="0" allowfullscreen></iframe>
+    			  	</a>
+            </div>
             </div>
           </div>
         </div>
