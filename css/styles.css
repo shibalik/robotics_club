@@ -15,7 +15,6 @@ a {
 }
 
 #feed-bar{
-  /*background-color: #263238;*/
   display: block;
   position: relative;
   width: 100%;
@@ -160,11 +159,7 @@ a img{
   order: 3;
 }
 
-
-
 .logo-font {
-  /*font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;*/
-  /*font-family: 'Orbitron', sans-serif;*/
   font-family: 'Love Ya Like A Sister', cursive;
   line-height: 1;
   color: #f5f5f5;

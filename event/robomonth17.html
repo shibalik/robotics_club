@@ -55,7 +55,7 @@ style: robomonth
                 {% endfor %}
               </div>
             </div>
-            <div class="mdl-tabs__panel" id="competitions-panel">
+            <div class="mdl-tabs__panel is-active" id="competitions-panel">
               {% for cmt in site.data.rmcmt %}
               <div class="cmt-card mdl-card">
                 <div class="cmt-tit mdl-card__title">
@@ -121,49 +121,66 @@ style: robomonth
                 </table>
               </div>
             </div>
-            <div class="mdl-tabs__panel is-active" id="gallery-panel">
-              <div class="gallery-img">
-              {% include gallery.html %}
-              <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:960px;height:480px;overflow:hidden;visibility:hidden;background-color:#24262e;">
-                <!-- Loading Screen -->
-                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+            <div class="mdl-tabs__panel" id="gallery-panel">
+              <div class="cmt-card mdl-card">
+                <div class="cmt-tit mdl-card__title">
+                  <h2 class="mdl-card__title-text">Images</h2>
                 </div>
-                <div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;">
+                <div class="mdl-card__supporting-text" style="width: auto">
+                    <!-- start---------------------------------- -->
                     <div>
-                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/1.jpg" />
-                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/1.jpg" />
+                      {% include gallery.html %}
+                      <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:960px;height:480px;overflow:hidden;visibility:hidden;background-color:#24262e;">
+                        <!-- Loading Screen -->
+                        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+                        </div>
+                        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;">
+                            <div>
+                                <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/1.jpg" />
+                                <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/1.jpg" />
+                            </div>
+                            <div>
+                                <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/2.jpg" />
+                                <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/2.jpg" />
+                            </div>
+                            <div>
+                                <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/3.jpg" />
+                                <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/3.jpg" />
+                            </div>
+                            <div>
+                                <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/4.jpg" />
+                                <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/4.jpg" />
+                            </div>
+                            <div>
+                                <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/5.jpg" />
+                                <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/5.jpg" />
+                            </div>
+                            <div>
+                                <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/6.jpg" />
+                                <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/6.jpg" />
+                            </div>
+                        </div>
+                        {% include gallery_nav.html %}
+                      </div>
+                      <script type="text/javascript">jssor_1_slider_init();</script>
                     </div>
-                    <div>
-                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/2.jpg" />
-                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/2.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/3.jpg" />
-                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/3.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/4.jpg" />
-                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/4.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/5.jpg" />
-                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/5.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="{{ site.url }}/assets/images/event/robomonth/6.jpg" />
-                        <img data-u="thumb" src="{{ site.url }}/assets/images/event/robomonth/6.jpg" />
-                    </div>
+                    <!-- end--------------------------------------- -->
                 </div>
-                {% include gallery_nav.html %}
               </div>
-              <script type="text/javascript">jssor_1_slider_init();</script>
+
+              <div class="cmt-card mdl-card">
+                <div class="cmt-tit mdl-card__title">
+                  <h2 class="mdl-card__title-text">Video</h2>
+                </div>
+                <div class="mdl-card__supporting-text" style="width: auto">
+                  <div>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=LAYzk7_0QZE">
+          			  		<iframe width="100%" height="350" src="https://www.youtube.com/embed/Sj9ty-_oML0" frameborder="0" allowfullscreen></iframe>
+          			  	</a>
+                  </div>
+                </div>
               </div>
-              <div class="vidrb" style="max-width: 960px;">
-              <a target="_blank" href="https://www.youtube.com/watch?v=LAYzk7_0QZE">
-    			  		<iframe width="560" height="350" src="https://www.youtube.com/embed/LAYzk7_0QZE" frameborder="0" allowfullscreen></iframe>
-    			  	</a>
-            </div>
             </div>
           </div>
         </div>

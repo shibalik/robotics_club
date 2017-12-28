@@ -11,11 +11,11 @@ th{position:relative;vertical-align:bottom;font-weight:700;line-height:24px;lett
 td, th{text-align:left;}
 
 table{
-    width: 100%;
-    table-layout: fixed;
+  width: 100%;
+  table-layout: fixed;
 }
 th, td{
-    overflow: auto;
+  overflow: auto;
 }
 
 .navigation .nav-blog {
@@ -40,7 +40,7 @@ th, td{
 }
 
 .post-grid {
-	
+
 }
 
 .comment-card {
@@ -64,7 +64,7 @@ th, td{
 
 .post-card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  
+
 }
 
 .post-card > .mdl-card__actions {

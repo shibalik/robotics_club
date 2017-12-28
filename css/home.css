@@ -1,6 +1,3 @@
-
-
-
 .form-card {
 	width: 100%;
 	height: 100%;
@@ -35,7 +32,6 @@
 .cmpt-section {
   position: relative;
   height: 550px;
-  
   background-color: #f3f3f3;
   background: url('../assets/images/cmpt-sec2.jpg') center no-repeat;
   background-size: cover;
@@ -70,11 +66,11 @@
 	position: relative;
 	height: auto;
 	width: auto;
-	background: #009688; /* For browsers that do not support gradients */        
-    background: -webkit-linear-gradient(-90deg, #009688, #263238); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(-90deg, #009688, #263238); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(-90deg, #009688, #263238); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(-90deg, #009688, #263238); /* Standard syntax (must be last) */
+	background: #009688; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, #009688, #263238); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, #009688, #263238); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, #009688, #263238); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, #009688, #263238); /* Standard syntax (must be last) */
 	background-size: cover;
 }
 
@@ -107,7 +103,7 @@
 
 .event-cards {
 	position: relative;
-    height: 25vw;
+  height: 25vw;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	width: 85%;
@@ -127,10 +123,10 @@
 	height: 100%;
 	background-size: cover;
 	opacity: 01;
-    border-radius:5px;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    transition: .5s ease;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  transition: .5s ease;
 }
 
 .event-details {
@@ -144,11 +140,11 @@
 	color: #fff;
 	opacity: 0;
 	border: 1px dashed #ECEFF1;
-    border-radius: 5px;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    transition: .5s ease;
-    font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  transition: .5s ease;
+  font-family: 'Orbitron', sans-serif;
 	color: #fff;
 	height: auto;
 	font-size: 1.5vw;
@@ -236,12 +232,12 @@
 /*##### For Mobile #####*/
 @media (max-width: 900px) {
 	.m-prj-card.mdl-card {
-  height: 400px;
-  margin: 5%;
+	  height: 400px;
+	  margin: 5%;
 
-  /*opacity: 0.6;*/
-	width: 90%;
-}
+	  /*opacity: 0.6;*/
+		width: 90%;
+	}
 	.hero-section {
 	    height: 300px;
 	}
@@ -272,34 +268,29 @@
 	.event-section {
 		/*height: 800px;*/
 		background: -webkit-linear-gradient(-90deg, #009688, #009688); /* For Safari 5.1 to 6.0 */
-	    background: -o-linear-gradient(-90deg, #009688, #009688); /* For Opera 11.1 to 12.0 */
-	    background: -moz-linear-gradient(-90deg, #009688, #009688); /* For Firefox 3.6 to 15 */
-	    background: linear-gradient(-90deg, #009688, #009688); /* Standard syntax (must be last) */
+    background: -o-linear-gradient(-90deg, #009688, #009688); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-90deg, #009688, #009688); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, #009688, #009688); /* Standard syntax (must be last) */
 	}
 	.event-details {
 		font-size: 20px;
 	}
 
-	  .cmpt-slogan {
-	    font-size: 26px;
-	    margin: 0 16px;
-	    padding-top: 24px;
-	  }
+  .cmpt-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
 
-	  .cmpt-sub-slogan {
-	    font-size: 16px;
-	    margin: 0 16px;
-	    padding-top: 8px;
-	  }
+  .cmpt-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
 
-	.cmpt-btn{
-		/*margin-top: 0px*/
-	}
 	.event-content {
-	height: 85%;
-}
-
-
+		height: 85%;
+	}
 }
 
 /*Slide Show*/
@@ -427,7 +418,7 @@
     animation-delay: 30s;
 }*/
 
-@-webkit-keyframes imageAnimation { 
+@-webkit-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -447,7 +438,7 @@
 	}
 	200% { opacity: 0 }
 }
-@-moz-keyframes imageAnimation { 
+@-moz-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -467,7 +458,7 @@
 	}
 	200% { opacity: 0 }
 }
-@-o-keyframes imageAnimation { 
+@-o-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -487,7 +478,7 @@
 	}
 	200% { opacity: 0 }
 }
-@-ms-keyframes imageAnimation { 
+@-ms-keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -507,7 +498,7 @@
 	}
 	200% { opacity: 0 }
 }
-@keyframes imageAnimation { 
+@keyframes imageAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-animation-timing-function: ease-in;
@@ -527,7 +518,7 @@
 	}
 	200% { opacity: 0 }
 }
-@-webkit-keyframes titleAnimation { 
+@-webkit-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateX(200px);
@@ -551,7 +542,7 @@
 	50% { opacity: 0 }
 	200% { opacity: 0 }
 }
-@-moz-keyframes titleAnimation { 
+@-moz-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateX(200px);
@@ -575,7 +566,7 @@
 	50% { opacity: 0 }
 	200% { opacity: 0 }
 }
-@-o-keyframes titleAnimation { 
+@-o-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateX(200px);
@@ -599,7 +590,7 @@
 	50% { opacity: 0 }
 	200% { opacity: 0 }
 }
-@-ms-keyframes titleAnimation { 
+@-ms-keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateX(200px);
@@ -623,7 +614,7 @@
 	50% { opacity: 0 }
 	200% { opacity: 0 }
 }
-@keyframes titleAnimation { 
+@keyframes titleAnimation {
 	0% {
 	    opacity: 0;
 	    -webkit-transform: translateX(200px);
@@ -651,13 +642,12 @@
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
 }
-@media screen and (max-width: 1140px) { 
+@media screen and (max-width: 1140px) {
 	.cb-slideshow li div h3 { font-size: 100px }
 }
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
 	.ss-container {
 		height: 250px;
 	}
 	.cb-slideshow li div a { font-size: 30px }
 }
-

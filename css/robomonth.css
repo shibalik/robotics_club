@@ -1,10 +1,10 @@
 .robomonth-card-cont{
   width: 100%;
   background: #263238; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(135deg, #1B5D70, #6FA623); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(135deg, #1B5D70, #6FA623); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(135deg, #1B5D70, #6FA623); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(135deg, #1B5D70, #6FA623); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradient(135deg, #1B5D70, #6FA623); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(135deg, #1B5D70, #6FA623); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(135deg, #1B5D70, #6FA623); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(135deg, #1B5D70, #6FA623); /* Standard syntax (must be last) */
 
 }
 
@@ -75,24 +75,12 @@
 	left: 0;
 	padding: 0;
 	margin: 0;
-	/*background: transparent url(../assets/images/ss/pattern.png) repeat top left;*/
   background-color: rgba(0,0,0, 0.5)
 }
 
 #robomonth-content{
   width: 100%;
   padding: 0;
-}
-
-.gallery-img{
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.vidrb{
-  margin: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 @media (max-width: 900px) {
