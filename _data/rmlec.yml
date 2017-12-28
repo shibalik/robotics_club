@@ -6,3 +6,6 @@
 
 - name: Image Processing
   link: IP_Lecture.pdf
+
+- name: Robot OS (ROS)
+  link: ROS_lec1-1.pdf
