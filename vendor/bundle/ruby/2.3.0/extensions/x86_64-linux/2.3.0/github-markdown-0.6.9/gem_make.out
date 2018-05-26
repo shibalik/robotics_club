@@ -1,0 +1,30 @@
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+/usr/bin/ruby2.3 -r ./siteconf20180526-22769-gdga1d.rb extconf.rb
+creating Makefile
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+make "DESTDIR=" clean
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+make "DESTDIR="
+compiling autolink.c
+compiling buffer.c
+compiling gh-markdown.c
+gh-markdown.c: In function ‘rndr_blockcode_github’:
+gh-markdown.c:56:29: warning: implicit declaration of function ‘isspace’ [-Wimplicit-function-declaration]
+   while (i < lang->size && !isspace(lang->data[i]))
+                             ^
+gh-markdown.c:82:3: warning: implicit declaration of function ‘houdini_escape_html0’ [-Wimplicit-function-declaration]
+   houdini_escape_html0(ob, lang_name, lang_size, 0);
+   ^
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling html.c
+compiling markdown.c
+compiling plaintext.c
+compiling stack.c
+linking shared-object github/markdown.so
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 markdown.so ./.gem.20180526-22769-6yeedl/github
