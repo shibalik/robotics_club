@@ -31,8 +31,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20180604-9679-1ggf9i8
 sitelibdir = $(DESTDIR)./.gem.20180604-9679-1ggf9i8
+=======
+sitearchdir = $(DESTDIR)./.gem.20180526-22769-6yeedl
+sitelibdir = $(DESTDIR)./.gem.20180526-22769-6yeedl
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -136,10 +141,17 @@ extout_prefix =
 target_prefix = /github
 LOCAL_LIBS = 
 LIBS = $(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lcrypt -lm   -lc
+<<<<<<< HEAD
 ORIG_SRCS = stack.c plaintext.c houdini_href_e.c markdown.c buffer.c gh-markdown.c html.c houdini_html_e.c autolink.c
 SRCS = $(ORIG_SRCS) 
 OBJS = autolink.o buffer.o gh-markdown.o houdini_href_e.o houdini_html_e.o html.o markdown.o plaintext.o stack.o
 HDRS = $(srcdir)/autolink.h $(srcdir)/houdini.h $(srcdir)/markdown.h $(srcdir)/buffer.h $(srcdir)/html_blocks.h $(srcdir)/stack.h $(srcdir)/plaintext.h $(srcdir)/html.h
+=======
+ORIG_SRCS = houdini_html_e.c stack.c html.c plaintext.c buffer.c markdown.c houdini_href_e.c gh-markdown.c autolink.c
+SRCS = $(ORIG_SRCS) 
+OBJS = autolink.o buffer.o gh-markdown.o houdini_href_e.o houdini_html_e.o html.o markdown.o plaintext.o stack.o
+HDRS = $(srcdir)/plaintext.h $(srcdir)/houdini.h $(srcdir)/html_blocks.h $(srcdir)/stack.h $(srcdir)/autolink.h $(srcdir)/buffer.h $(srcdir)/markdown.h $(srcdir)/html.h
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 TARGET = markdown
 TARGET_NAME = markdown
 TARGET_ENTRY = Init_$(TARGET_NAME)

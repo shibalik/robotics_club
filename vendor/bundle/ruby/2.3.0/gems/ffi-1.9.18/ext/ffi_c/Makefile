@@ -31,8 +31,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20180604-9679-1czhfgu
 sitelibdir = $(DESTDIR)./.gem.20180604-9679-1czhfgu
+=======
+sitearchdir = $(DESTDIR)./.gem.20180526-22769-6tosf3
+sitelibdir = $(DESTDIR)./.gem.20180526-22769-6tosf3
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -81,12 +86,21 @@ optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
 warnflags = 
 CCDLFLAGS = -fPIC
+<<<<<<< HEAD
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC  $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) 
 DEFS     = 
 CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\" -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security  $(ARCH_FLAG)
 ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic 
+=======
+CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC $(ARCH_FLAG)
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+DEFS     = 
+CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\" -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags)
+CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security $(ARCH_FLAG)
+ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 dldflags =  
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
@@ -135,11 +149,19 @@ extout =
 extout_prefix = 
 target_prefix = 
 LOCAL_LIBS = 
+<<<<<<< HEAD
 LIBS = $(LIBRUBYARG_SHARED) -lffi  -lffi -lpthread -lgmp -ldl -lcrypt -lm   -lc
 ORIG_SRCS = ClosurePool.c ffi.c AbstractMemory.c Variadic.c MethodHandle.c StructByReference.c Buffer.c Platform.c Struct.c ArrayType.c Call.c MappedType.c FunctionInfo.c LongDouble.c DataConverter.c MemoryPointer.c Type.c StructByValue.c Pointer.c LastError.c StructLayout.c DynamicLibrary.c Types.c Thread.c Function.c
 SRCS = $(ORIG_SRCS) 
 OBJS = AbstractMemory.o ArrayType.o Buffer.o Call.o ClosurePool.o DataConverter.o DynamicLibrary.o Function.o FunctionInfo.o LastError.o LongDouble.o MappedType.o MemoryPointer.o MethodHandle.o Platform.o Pointer.o Struct.o StructByReference.o StructByValue.o StructLayout.o Thread.o Type.o Types.o Variadic.o ffi.o
 HDRS = $(srcdir)/StructByReference.h $(srcdir)/compat.h $(srcdir)/Function.h $(srcdir)/rbffi_endian.h $(srcdir)/rbffi.h $(srcdir)/LongDouble.h $(srcdir)/MemoryPointer.h $(srcdir)/StructByValue.h $(srcdir)/Platform.h $(srcdir)/Type.h $(srcdir)/AbstractMemory.h $(srcdir)/MappedType.h $(srcdir)/DynamicLibrary.h $(srcdir)/Types.h $(srcdir)/Pointer.h $(srcdir)/LastError.h $(srcdir)/extconf.h $(srcdir)/Struct.h $(srcdir)/ArrayType.h $(srcdir)/ClosurePool.h $(srcdir)/Thread.h $(srcdir)/MethodHandle.h $(srcdir)/Call.h
+=======
+LIBS = $(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lcrypt -lm   -lc
+ORIG_SRCS = Pointer.c ClosurePool.c MemoryPointer.c AbstractMemory.c Struct.c Variadic.c StructByValue.c Platform.c FunctionInfo.c Buffer.c StructLayout.c DataConverter.c Call.c Types.c MappedType.c Thread.c Type.c Function.c ArrayType.c LongDouble.c DynamicLibrary.c ffi.c MethodHandle.c LastError.c StructByReference.c
+SRCS = $(ORIG_SRCS) 
+OBJS = AbstractMemory.o ArrayType.o Buffer.o Call.o ClosurePool.o DataConverter.o DynamicLibrary.o Function.o FunctionInfo.o LastError.o LongDouble.o MappedType.o MemoryPointer.o MethodHandle.o Platform.o Pointer.o Struct.o StructByReference.o StructByValue.o StructLayout.o Thread.o Type.o Types.o Variadic.o ffi.o
+HDRS = $(srcdir)/Thread.h $(srcdir)/rbffi.h $(srcdir)/AbstractMemory.h $(srcdir)/StructByValue.h $(srcdir)/Call.h $(srcdir)/Struct.h $(srcdir)/compat.h $(srcdir)/StructByReference.h $(srcdir)/rbffi_endian.h $(srcdir)/ArrayType.h $(srcdir)/LongDouble.h $(srcdir)/MethodHandle.h $(srcdir)/LastError.h $(srcdir)/MappedType.h $(srcdir)/Platform.h $(srcdir)/ClosurePool.h $(srcdir)/DynamicLibrary.h $(srcdir)/Type.h $(srcdir)/Types.h $(srcdir)/Pointer.h $(srcdir)/Function.h $(srcdir)/extconf.h $(srcdir)/MemoryPointer.h
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 TARGET = ffi_c
 TARGET_NAME = ffi_c
 TARGET_ENTRY = Init_$(TARGET_NAME)
@@ -259,3 +281,8 @@ $(DLLIB): $(OBJS) Makefile
 
 
 $(OBJS): $(HDRS) $(ruby_headers)
+<<<<<<< HEAD
+=======
+LIBFFI_HOST=--host=
+include ${srcdir}/libffi.mk
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
 /usr/bin/ruby2.3 -r ./siteconf20180604-9679-s9vp60.rb extconf.rb
 creating Makefile
@@ -6,6 +7,16 @@ current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/g
 make "DESTDIR=" clean
 
 current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
+=======
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
+/usr/bin/ruby2.3 -r ./siteconf20180526-22769-1ysg1io.rb extconf.rb
+creating Makefile
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
+make "DESTDIR=" clean
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 make "DESTDIR="
 compiling buffer.c
 compiling escape_utils.c
@@ -19,6 +30,12 @@ compiling houdini_uri_u.c
 compiling houdini_xml_e.c
 linking shared-object escape_utils/escape_utils.so
 
+<<<<<<< HEAD
 current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 escape_utils.so ./.gem.20180604-9679-9bk57h/escape_utils
+=======
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/escape_utils-1.0.1/ext/escape_utils
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 escape_utils.so ./.gem.20180526-22769-16jnuok/escape_utils
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638

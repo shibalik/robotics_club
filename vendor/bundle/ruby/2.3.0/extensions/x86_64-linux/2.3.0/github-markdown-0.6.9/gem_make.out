@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
 /usr/bin/ruby2.3 -r ./siteconf20180604-9679-jtf25h.rb extconf.rb
 creating Makefile
@@ -6,6 +7,16 @@ current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/g
 make "DESTDIR=" clean
 
 current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+=======
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+/usr/bin/ruby2.3 -r ./siteconf20180526-22769-gdga1d.rb extconf.rb
+creating Makefile
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+make "DESTDIR=" clean
+
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 make "DESTDIR="
 compiling autolink.c
 compiling buffer.c
@@ -25,6 +36,12 @@ compiling plaintext.c
 compiling stack.c
 linking shared-object github/markdown.so
 
+<<<<<<< HEAD
 current directory: /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 markdown.so ./.gem.20180604-9679-1ggf9i8/github
+=======
+current directory: /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/github-markdown-0.6.9/ext/markdown
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 markdown.so ./.gem.20180526-22769-6yeedl/github
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638

@@ -31,8 +31,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20180604-9679-8beyo2
 sitelibdir = $(DESTDIR)./.gem.20180604-9679-8beyo2
+=======
+sitearchdir = $(DESTDIR)./.gem.20180526-22769-181osu4
+sitelibdir = $(DESTDIR)./.gem.20180526-22769-181osu4
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -84,7 +89,11 @@ CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
+<<<<<<< HEAD
 CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/include -I/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/include/libxml2 -I/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/include/libxml2 -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Fix-comparison-with-root-node-in-xmlXPathCmpNodes.patch 0002-Fix-XPointer-paths-beginning-with-range-to.patch 0003-Disallow-namespace-nodes-in-XPointer-ranges.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"0001-Fix-heap-overread-in-xsltFormatNumberConversion.patch 0002-Check-for-integer-overflow-in-xsltAddTextString.patch\""
+=======
+CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/include -I/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/include/libxml2 -I/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/include/libxml2 -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Fix-comparison-with-root-node-in-xmlXPathCmpNodes.patch 0002-Fix-XPointer-paths-beginning-with-range-to.patch 0003-Disallow-namespace-nodes-in-XPointer-ranges.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"0001-Fix-heap-overread-in-xsltFormatNumberConversion.patch 0002-Check-for-integer-overflow-in-xsltAddTextString.patch\""
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security $(ARCH_FLAG)
 ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags =  
@@ -123,8 +132,13 @@ TOUCH = exit >
 
 preload = 
 
+<<<<<<< HEAD
 libpath = . $(archlibdir) /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
 LIBPATH =  -L. -L$(archlibdir) -L/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib -L/home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
+=======
+libpath = . $(archlibdir) /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
+LIBPATH =  -L. -L$(archlibdir) -L/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib -L/home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -135,11 +149,19 @@ extout =
 extout_prefix = 
 target_prefix = /nokogiri
 LOCAL_LIBS = 
+<<<<<<< HEAD
 LIBS = $(LIBRUBYARG_SHARED) /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libexslt.a -lm -ldl -llzma -lz /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libxslt.a -ldl -lm -llzma -lz /home/ayush/Projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a -llzma -lpthread -lgmp -ldl -lcrypt -lm   -lc 
 ORIG_SRCS = xml_sax_parser_context.c xml_reader.c xml_xpath_context.c xml_syntax_error.c xml_entity_decl.c html_element_description.c xml_attr.c xml_processing_instruction.c xml_node.c html_document.c xml_dtd.c xml_document.c xml_libxml2_hacks.c xml_attribute_decl.c html_sax_parser_context.c xml_sax_parser.c xml_cdata.c xml_element_decl.c xml_node_set.c xml_element_content.c xml_io.c xml_schema.c xslt_stylesheet.c html_sax_push_parser.c xml_text.c xml_namespace.c html_entity_lookup.c xml_comment.c xml_sax_push_parser.c xml_encoding_handler.c xml_document_fragment.c xml_relax_ng.c xml_entity_reference.c nokogiri.c
 SRCS = $(ORIG_SRCS) 
 OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
 HDRS = $(srcdir)/html_sax_push_parser.h $(srcdir)/xml_entity_decl.h $(srcdir)/xml_syntax_error.h $(srcdir)/xml_document_fragment.h $(srcdir)/xml_element_decl.h $(srcdir)/xml_schema.h $(srcdir)/xml_sax_parser.h $(srcdir)/xml_libxml2_hacks.h $(srcdir)/xml_attribute_decl.h $(srcdir)/xml_sax_push_parser.h $(srcdir)/xml_io.h $(srcdir)/xml_document.h $(srcdir)/xml_sax_parser_context.h $(srcdir)/xml_processing_instruction.h $(srcdir)/xml_attr.h $(srcdir)/xml_text.h $(srcdir)/xslt_stylesheet.h $(srcdir)/xml_entity_reference.h $(srcdir)/html_entity_lookup.h $(srcdir)/xml_namespace.h $(srcdir)/xml_comment.h $(srcdir)/xml_xpath_context.h $(srcdir)/xml_encoding_handler.h $(srcdir)/xml_relax_ng.h $(srcdir)/xml_node_set.h $(srcdir)/xml_reader.h $(srcdir)/xml_cdata.h $(srcdir)/html_document.h $(srcdir)/xml_element_content.h $(srcdir)/xml_dtd.h $(srcdir)/nokogiri.h $(srcdir)/html_element_description.h $(srcdir)/html_sax_parser_context.h $(srcdir)/xml_node.h
+=======
+LIBS = $(LIBRUBYARG_SHARED) /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libexslt.a -lm -ldl -llzma -lz /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libxslt.a -ldl -lm -llzma -lz /home/heisenberg/projects/robotics_club/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.0/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a -llzma -lpthread -lgmp -ldl -lcrypt -lm   -lc 
+ORIG_SRCS = xml_processing_instruction.c xml_libxml2_hacks.c xml_dtd.c xml_encoding_handler.c xml_document_fragment.c xml_xpath_context.c html_element_description.c xml_attr.c xml_io.c xml_reader.c html_sax_push_parser.c xml_comment.c xml_entity_decl.c xml_node_set.c html_document.c xml_sax_push_parser.c xml_relax_ng.c xml_cdata.c xml_syntax_error.c nokogiri.c xml_node.c xml_schema.c html_entity_lookup.c xml_entity_reference.c xml_sax_parser_context.c xml_namespace.c xml_text.c xml_element_content.c xslt_stylesheet.c xml_document.c xml_attribute_decl.c xml_element_decl.c xml_sax_parser.c html_sax_parser_context.c
+SRCS = $(ORIG_SRCS) 
+OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
+HDRS = $(srcdir)/xml_document.h $(srcdir)/xml_encoding_handler.h $(srcdir)/xml_sax_parser_context.h $(srcdir)/xml_libxml2_hacks.h $(srcdir)/xml_document_fragment.h $(srcdir)/xml_attribute_decl.h $(srcdir)/xml_reader.h $(srcdir)/html_entity_lookup.h $(srcdir)/xml_node.h $(srcdir)/xml_io.h $(srcdir)/xml_relax_ng.h $(srcdir)/xml_element_decl.h $(srcdir)/xml_processing_instruction.h $(srcdir)/xml_attr.h $(srcdir)/xml_sax_parser.h $(srcdir)/html_sax_push_parser.h $(srcdir)/nokogiri.h $(srcdir)/html_element_description.h $(srcdir)/xml_text.h $(srcdir)/xml_dtd.h $(srcdir)/xml_entity_decl.h $(srcdir)/html_sax_parser_context.h $(srcdir)/xml_namespace.h $(srcdir)/html_document.h $(srcdir)/xml_entity_reference.h $(srcdir)/xml_xpath_context.h $(srcdir)/xml_node_set.h $(srcdir)/xslt_stylesheet.h $(srcdir)/xml_syntax_error.h $(srcdir)/xml_element_content.h $(srcdir)/xml_sax_push_parser.h $(srcdir)/xml_schema.h $(srcdir)/xml_cdata.h $(srcdir)/xml_comment.h
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 TARGET = nokogiri
 TARGET_NAME = nokogiri
 TARGET_ENTRY = Init_$(TARGET_NAME)

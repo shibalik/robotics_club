@@ -31,8 +31,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20180604-9679-1h7a44d
 sitelibdir = $(DESTDIR)./.gem.20180604-9679-1h7a44d
+=======
+sitearchdir = $(DESTDIR)./.gem.20180526-22769-ywjuvv
+sitelibdir = $(DESTDIR)./.gem.20180526-22769-ywjuvv
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -136,7 +141,11 @@ extout_prefix =
 target_prefix = /charlock_holmes
 LOCAL_LIBS = 
 LIBS = $(LIBRUBYARG_SHARED) -licudata -licuuc -lz -licui18n -licui18n  -lpthread -lgmp -ldl -lcrypt -lm   -lc
+<<<<<<< HEAD
 ORIG_SRCS = converter.c ext.c encoding_detector.c transliterator.cpp
+=======
+ORIG_SRCS = encoding_detector.c converter.c ext.c transliterator.cpp
+>>>>>>> 79b9db4f22f651cae0a1a11ac5046a4ef75e6638
 SRCS = $(ORIG_SRCS) 
 OBJS = converter.o encoding_detector.o ext.o transliterator.o
 HDRS = $(srcdir)/common.h
