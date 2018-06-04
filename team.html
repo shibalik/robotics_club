@@ -6,7 +6,7 @@ permalink: /team/
 ---
 <a name="top"></a>
 <div class="cordi-section mdl-typography--text-center">
-	
+
 	<div class="team-sec">Coordinators</div>
   <div class="cordi-grid mdl-grid">
   	<div class="mdl-cell mdl-cell--2-col mdl-cell--0-col-tablet mdl-cell--0-col-phone"></div>
@@ -57,12 +57,12 @@ permalink: /team/
 </div>
 
 <div class="seci-section mdl-typography--text-center">
-	
+
 	<div class="team-sec">Secretaries</div>
   <div class="seci-grid mdl-grid">
   	<div class="mdl-cell mdl-cell--2-col mdl-cell--0-col-tablet mdl-cell--0-col-phone"></div>
   	{% assign count = 0 %}
-  	{% for seci in site.data.secis %}
+  	{% for seci in site.data.secisy %}
   	{% assign count = count | plus:1 %}
     <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--4-col-phone">
 		<div class="seci-card mdl-card mdl-shadow--2dp">
@@ -73,7 +73,7 @@ permalink: /team/
 				<center>
 				  {{ seci.add }}<br>
 				  {{ seci.mob }}<br>
-				  {{ seci.email }}@iitk.ac.in
+				  {{ seci.email }}
 				</center>
 			</div>
 		  	<div class="seci-name mdl-shadow--2dp">

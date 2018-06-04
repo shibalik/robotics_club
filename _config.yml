@@ -15,5 +15,5 @@ kramdown:
 
 highlighter: rouge
 
-exclude: ["/docs"]
+exclude: ["/docs", vendor]
 destination: "docs/"
